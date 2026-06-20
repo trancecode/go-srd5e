@@ -43,7 +43,9 @@ var (
 )
 
 // NewRoller returns a fair, deterministically seeded roller backed by
-// math/rand/v2 (a PCG source).
+// math/rand/v2 (a PCG source). The second PCG word is mixed with the
+// golden-ratio constant so a single seed yields a non-degenerate state pair
+// while staying deterministic for equal seeds.
 func NewRoller(seed uint64) Roller {
-	return rand.New(rand.NewPCG(seed, seed))
+	return rand.New(rand.NewPCG(seed, seed^0x9e3779b97f4a7c15))
 }

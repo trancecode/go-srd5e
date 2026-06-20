@@ -155,7 +155,7 @@ var (
 // NewRoller returns a fair, deterministically seeded roller backed by
 // math/rand/v2 (a PCG source).
 func NewRoller(seed uint64) Roller {
-	return rand.New(rand.NewPCG(seed, seed))
+	return rand.New(rand.NewPCG(seed, seed^0x9e3779b97f4a7c15))
 }
 ```
 
