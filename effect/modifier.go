@@ -1,6 +1,8 @@
 package effect
 
 import (
+	"slices"
+
 	"github.com/trancecode/go-srd5e/core"
 	"github.com/trancecode/go-srd5e/dice"
 )
@@ -40,14 +42,7 @@ func ModifierBonus(active []ModifierSpec, target ModifierTarget, ability core.Ab
 var diceExprZero = dice.Expr{}
 
 func appliesTo(m ModifierSpec, target ModifierTarget, ability core.Ability) bool {
-	hasTarget := false
-	for _, t := range m.Targets {
-		if t == target {
-			hasTarget = true
-			break
-		}
-	}
-	if !hasTarget {
+	if !slices.Contains(m.Targets, target) {
 		return false
 	}
 	return m.Ability == core.AbilityAny || m.Ability == ability
