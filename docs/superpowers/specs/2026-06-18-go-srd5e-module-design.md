@@ -1006,30 +1006,21 @@ between SRD 5.1 and SRD 5.2. Where a modeling choice depends on edition, it is
 confined to layer 2 content fields. SRD 5.2 is the documented reference
 baseline.
 
-## Private module consumption
+## Module consumption
 
-The repository is private under the trancecode organization. The module path is
-`github.com/trancecode/go-srd5e`.
-
-Consuming repositories configure Go to skip the public proxy and checksum
-database, and configure git to authenticate over SSH:
-
-```bash
-go env -w GOPRIVATE=github.com/trancecode/*
-git config --global url."git@github.com:".insteadOf "https://github.com/"
-```
-
-For day-to-day local development across the games, each game's `go.mod` uses a
-replace directive that points at the local checkout, so changes do not require
-tagging and publishing on every edit:
+The module is public at module path `github.com/trancecode/go-srd5e`, consumed
+with a plain `go get github.com/trancecode/go-srd5e@latest`; pkg.go.dev serves
+the API docs. For day-to-day local development across several repos, a consumer's
+`go.mod` uses a replace directive pointing at the local checkout, so changes do
+not require tagging on every edit:
 
 ```
 replace github.com/trancecode/go-srd5e => ../go-srd5e
 ```
 
 Once the module is stable, releases are tagged with semantic version tags (for
-example `v0.1.0`), games pin a version, and the replace directive is dropped. A
-`CONSUMING.md` in the repository documents this setup for client code.
+example `v0.1.0`), consumers pin a version, and the replace directive is dropped.
+`CONSUMING.md` documents this for client code.
 
 ## Testing
 

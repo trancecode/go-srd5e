@@ -4,7 +4,7 @@ A reusable Go module that encodes the rules of the System Reference Document for
 5th edition (SRD 5e, CC-BY-4.0), so multiple games can share one correct, tested
 implementation of the d20 core instead of each reimplementing it.
 
-**[API documentation (godoc)](https://trancecode.github.io/go-srd5e/)**
+**[API documentation (godoc)](https://pkg.go.dev/github.com/trancecode/go-srd5e)**
 
 ## What it is
 
@@ -47,8 +47,8 @@ The authoritative design lives under `docs/`:
 
 ## Using it
 
-The repository is private. See [CONSUMING.md](CONSUMING.md) for the `GOPRIVATE`,
-SSH, and `replace`-directive setup a consuming game needs.
+`go get github.com/trancecode/go-srd5e@latest`. See [CONSUMING.md](CONSUMING.md)
+for local cross-repo development (a `replace` directive).
 
 ## Conventions
 
