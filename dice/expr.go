@@ -46,3 +46,24 @@ func (e Expr) Max() int { return e.Count*e.Sides + e.Modifier }
 func (e Expr) Average() float64 {
 	return float64(e.Count)*(float64(e.Sides)+1)/2 + float64(e.Modifier)
 }
+
+// Roll rolls each die and sums, adding the modifier once. Result.Dice holds the
+// individual faces in roll order.
+func (e Expr) Roll(r Roller) Result {
+	dice := make([]int, e.Count)
+	sum := 0
+	for i := range dice {
+		face := r.IntN(e.Sides) + 1
+		dice[i] = face
+		sum += face
+	}
+	return Result{Dice: dice, Total: sum + e.Modifier}
+}
+
+// RollCritical rolls a critical hit: the number of dice is doubled, the modifier
+// is added once (SRD rule: double the dice, not the modifier).
+func (e Expr) RollCritical(r Roller) Result {
+	res := Expr{Count: e.Count * 2, Sides: e.Sides}.Roll(r)
+	res.Total += e.Modifier
+	return res
+}
