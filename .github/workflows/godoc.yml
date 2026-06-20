@@ -1,0 +1,71 @@
+name: godoc
+
+# Generate static godoc HTML for the module and publish it to GitHub Pages.
+# Prerequisites (one-time, in repo Settings): Pages -> Source = "GitHub Actions".
+# Note: Pages on a private repository requires a paid plan, and the published
+# site is publicly readable.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+
+      - name: Install godoc
+        run: go install golang.org/x/tools/cmd/godoc@latest
+
+      - name: Generate static docs
+        env:
+          MOD: github.com/trancecode/go-srd5e
+        run: |
+          set -euo pipefail
+          go mod download
+          "$(go env GOPATH)/bin/godoc" -http=127.0.0.1:6060 &
+          GODOC_PID=$!
+          trap 'kill "$GODOC_PID"' EXIT
+          # Wait for the module's package page to be served.
+          for i in $(seq 1 60); do
+            if curl -sf "http://127.0.0.1:6060/pkg/$MOD/" >/dev/null; then break; fi
+            sleep 1
+          done
+          # Mirror the module docs and the shared lib/ assets into ./site,
+          # rewriting links so the result is browsable as static files.
+          wget --recursive --no-parent --no-host-directories --adjust-extension \
+               --page-requisites --convert-links --execute robots=off \
+               --include-directories="/pkg/$MOD,/lib,/pkg/github.com/trancecode" \
+               --directory-prefix=site \
+               "http://127.0.0.1:6060/pkg/$MOD/"
+          # Root entry point redirects to the module package page.
+          printf '<!doctype html><meta http-equiv="refresh" content="0; url=pkg/%s/">\n' "$MOD" > site/index.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
