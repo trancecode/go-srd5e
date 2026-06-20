@@ -52,9 +52,7 @@ for local cross-repo development (a `replace` directive).
 
 ## Conventions
 
-Code follows [docs/styleguide.md](docs/styleguide.md). The one deviation from
-idiomatic Go worth noting: acronyms use Java camel case (`Id`, `Hp`, `Ac`, `Dc`,
-`Xp`), not all-caps initialisms.
+Code follows [docs/styleguide.md](docs/styleguide.md).
 
 ## Licensing
 
