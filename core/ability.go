@@ -47,3 +47,24 @@ func AbilityModifier(score AbilityScore) Modifier {
 
 // Modifier returns the score's ability modifier.
 func (s AbilityScore) Modifier() Modifier { return AbilityModifier(s) }
+
+// Score returns the score for a concrete ability. It panics on AbilityNone or
+// AbilityAny, which are not concrete abilities.
+func (s AbilityScores) Score(a Ability) AbilityScore {
+	switch a {
+	case AbilityStrength:
+		return s.Strength
+	case AbilityDexterity:
+		return s.Dexterity
+	case AbilityConstitution:
+		return s.Constitution
+	case AbilityIntelligence:
+		return s.Intelligence
+	case AbilityWisdom:
+		return s.Wisdom
+	case AbilityCharisma:
+		return s.Charisma
+	default:
+		panic("core: Score requires a concrete ability")
+	}
+}
