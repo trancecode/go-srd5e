@@ -20,7 +20,11 @@ jobs:
       with:
         # go.mod is the single source of truth for the repository's Go version.
         go-version-file: go.mod
-        cache: true
+        # This module has no third-party dependencies and therefore no go.sum,
+        # so there is nothing for the module cache to restore. Leaving caching
+        # on makes every run emit a "Dependencies file is not found" warning.
+        # Set this back to true if a dependency is ever added.
+        cache: false
 
     - name: Check formatting
       run: |
