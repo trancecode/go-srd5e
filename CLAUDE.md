@@ -69,7 +69,7 @@ This section contains guidelines specific to this repository that extend or over
 `go-srd5e` is a *rules kernel*: the minimal, game-agnostic core of SRD 5e (pure functions and value types). It is meant to be shared by three games that drive its requirements: a fantasy dungeon crawler (the proven reference shape), a second fantasy game, and a not-yet-built cyberpunk ECS tactics game. The kernel owns no content, game state, rendering, geometry, or difficulty policy — those belong to each game.
 
 * **Source of truth for the API:** `docs/superpowers/specs/2026-06-18-go-srd5e-module-design.md`. Read it before changing any package's shape; it carries the binding design principles. Update the spec when the design changes.
-* **Implementation:** one plan per package under `docs/superpowers/plans/`, executed in dependency order with TDD (a fresh subagent per task plus review is the established method). Module path `github.com/trancecode/go-srd5e`, Go `1.25`.
+* **Implementation:** one plan per package under `docs/superpowers/plans/`, executed in dependency order with TDD (a fresh subagent per task plus review is the established method). Module path `github.com/trancecode/go-srd5e`; the Go version is declared in `go.mod`.
 
 **Build order and status (dependency DAG):** `core` (done) → `dice` (done) → `check` + `combat` (done) → `damage` (done) → `effect` (done) → `turn` (done) → `resource` (done) → `content` (done). All 8 packages implemented, reviewed, and green; tagged `v1.0.0`. pkg.go.dev publishes the godoc off the tag.
 
