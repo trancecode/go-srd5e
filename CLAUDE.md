@@ -87,6 +87,21 @@ This section contains guidelines specific to this repository that extend or over
 * Follow the style guide from [docs/styleguide.md](docs/styleguide.md).
 * Read package `doc.go` files before diving into implementation.
 
+### Go Version Consistency
+
+`go.mod` is the single source of truth for this repository's Go version.
+
+* Never hardcode a `go-version:` literal in a workflow. Any workflow that sets
+  up Go must use `go-version-file: go.mod` so the version is derived from the
+  canonical declaration.
+* `.github/workflows/check-go-version.yml` runs weekly and compares the `go`
+  directive in `go.mod` against the latest stable Go release. When the
+  repository falls behind, it opens a `claude`-labelled issue rather than
+  pushing a branch or opening a pull request: the built-in `GITHUB_TOKEN`
+  cannot push commits that touch files under `.github/workflows/`, so a
+  self-crafted bump would be rejected. The autonomous Claude agent picks up the
+  issue and opens the pull request instead.
+
 ### Go Testing Requirements
 
 Before pushing any Go code changes, you MUST run the following and ensure they pass:
