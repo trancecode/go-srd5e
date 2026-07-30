@@ -1,3 +1,3 @@
 module github.com/trancecode/go-srd5e
 
-go 1.25
+go 1.26.5
