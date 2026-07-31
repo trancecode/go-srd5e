@@ -12,7 +12,13 @@ func TestHitDicePool(t *testing.T) {
 	if p.Total() != 5 || p.Available(8) != 5 {
 		t.Fatalf("fresh pool wrong: total %d avail %d", p.Total(), p.Available(8))
 	}
-	if !p.Spend(8) || !p.Spend(8) || p.Available(8) != 3 {
+	if !p.Spend(8) {
+		t.Fatal("first spend of a d8 failed")
+	}
+	if !p.Spend(8) {
+		t.Fatal("second spend of a d8 failed")
+	}
+	if p.Available(8) != 3 {
 		t.Errorf("after 2 spends available = %d, want 3", p.Available(8))
 	}
 	p.Recover(1)

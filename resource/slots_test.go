@@ -11,7 +11,13 @@ func TestSpellSlotPool(t *testing.T) {
 	if p.Available(0) != 0 || p.Available(9) != 0 || p.Available(10) != 0 {
 		t.Error("out-of-range levels should be 0")
 	}
-	if !p.Expend(1) || !p.Expend(1) || p.Available(1) != 2 {
+	if !p.Expend(1) {
+		t.Fatal("first expend of a level 1 slot failed")
+	}
+	if !p.Expend(1) {
+		t.Fatal("second expend of a level 1 slot failed")
+	}
+	if p.Available(1) != 2 {
 		t.Errorf("expend wrong, available 1 = %d", p.Available(1))
 	}
 	if p.Expend(9) { // none at level 9
