@@ -1,0 +1,16 @@
+name: Code Analysis
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  analysis:
+    uses: trancecode/github-workflows/.github/workflows/go-analysis.yml@main
+    with:
+      system-packages: ''
