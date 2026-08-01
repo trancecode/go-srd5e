@@ -16,3 +16,4 @@ jobs:
     with:
       system-packages: ''
       xvfb: false
+      go-cache: false
