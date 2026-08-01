@@ -2,32 +2,18 @@ name: Go
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
+
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
+
 
 permissions:
   contents: read
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Go
-      uses: actions/setup-go@v5
-      with:
-        # go.mod is the single source of truth for the repository's Go version.
-        go-version-file: go.mod
-        # This module has no third-party dependencies and therefore no go.sum,
-        # so there is nothing for the module cache to restore. Leaving caching
-        # on makes every run emit a "Dependencies file is not found" warning.
-        # Set this back to true if a dependency is ever added.
-        cache: false
-
-    - name: Build
-      run: go build -v ./...
-
-    - name: Test
-      run: go test -v ./...
+    uses: trancecode/github-workflows/.github/workflows/go-build-test.yml@main
+    with:
+      system-packages: ''
+      test-command: 'go test -v ./...'
