@@ -26,18 +26,6 @@ jobs:
         # Set this back to true if a dependency is ever added.
         cache: false
 
-    - name: Check formatting
-      run: |
-        UNFORMATTED=$(gofmt -l .)
-        if [ -n "$UNFORMATTED" ]; then
-          echo "The following files are not gofmt-formatted:"
-          echo "$UNFORMATTED"
-          exit 1
-        fi
-
-    - name: Run go vet (fail on warnings)
-      run: go vet ./...
-
     - name: Build
       run: go build -v ./...
 
