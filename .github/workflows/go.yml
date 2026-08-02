@@ -18,3 +18,4 @@ jobs:
       system-packages: ''
       test-command: 'go test -v ./...'
       go-cache: false
+      ignore-paths: '*.md LICENSE docs/**'

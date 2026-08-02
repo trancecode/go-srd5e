@@ -3,18 +3,8 @@ name: Code Analysis
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - '**.md'
-      - 'LICENSE'
-      - 'doc/**'
-      - 'docs/**'
   pull_request:
     branches: [main]
-    paths-ignore:
-      - '**.md'
-      - 'LICENSE'
-      - 'doc/**'
-      - 'docs/**'
   workflow_dispatch:
 
 permissions:
@@ -28,3 +18,4 @@ jobs:
       golangci-args: '--disable=staticcheck'
       staticcheck-checks: 'inherit'
       go-cache: false
+      ignore-paths: '*.md LICENSE docs/**'
