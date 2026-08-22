@@ -40,3 +40,15 @@ func CombineVantage(advantage, disadvantage bool) Vantage {
 		return VantageDisadvantage
 	}
 }
+
+// String returns the lowercase name of the vantage.
+func (v Vantage) String() string {
+	switch v {
+	case VantageAdvantage:
+		return "advantage"
+	case VantageDisadvantage:
+		return "disadvantage"
+	default:
+		return "none"
+	}
+}

@@ -6,10 +6,25 @@ import "github.com/trancecode/go-srd5e/core"
 type AttackOutcome int
 
 const (
-	AttackMiss AttackOutcome = iota
+	AttackOutcomeNone AttackOutcome = iota
+	AttackMiss
 	AttackHit
 	AttackCritical
 )
+
+// String returns the lowercase name of the outcome.
+func (a AttackOutcome) String() string {
+	switch a {
+	case AttackMiss:
+		return "miss"
+	case AttackHit:
+		return "hit"
+	case AttackCritical:
+		return "critical"
+	default:
+		return "none"
+	}
+}
 
 // AttackResult is the outcome of resolving an attack roll against armor class.
 type AttackResult struct {

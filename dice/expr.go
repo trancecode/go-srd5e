@@ -67,3 +67,15 @@ func (e Expr) RollCritical(r Roller) Result {
 	res.Total += e.Modifier
 	return res
 }
+
+// String returns the expression in standard notation (e.g. "2d6+3", "1d20",
+// "1d8-1").
+func (e Expr) String() string {
+	if e.Modifier > 0 {
+		return fmt.Sprintf("%dd%d+%d", e.Count, e.Sides, e.Modifier)
+	}
+	if e.Modifier < 0 {
+		return fmt.Sprintf("%dd%d%d", e.Count, e.Sides, e.Modifier)
+	}
+	return fmt.Sprintf("%dd%d", e.Count, e.Sides)
+}

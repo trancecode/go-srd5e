@@ -7,6 +7,18 @@ type Skill struct {
 	Ability  Ability
 }
 
+// SkillNone is the zero Skill: no skill. Games use it as the "not a skill"
+// sentinel, mirroring AbilityNone.
+var SkillNone = Skill{}
+
+// String returns the skill's identifier, or "none" for SkillNone.
+func (s Skill) String() string {
+	if s.Id == "" {
+		return "none"
+	}
+	return s.Id
+}
+
 // Condition is an open named state (prone, poisoned, plus game-defined ones).
 type Condition struct{ Id, Name string }
 
@@ -42,6 +54,17 @@ var SRDSkills = []Skill{
 	SkillInvestigation, SkillMedicine, SkillNature, SkillPerception,
 	SkillPerformance, SkillPersuasion, SkillReligion, SkillSleightOfHand,
 	SkillStealth, SkillSurvival,
+}
+
+// SkillById returns the SRD skill with the given identifier. A game that
+// declares its own skills keeps its own lookup; this covers the SRD eighteen.
+func SkillById(id string) (Skill, bool) {
+	for _, s := range SRDSkills {
+		if s.Id == id {
+			return s, true
+		}
+	}
+	return SkillNone, false
 }
 
 // SRD physical and common elemental damage types.

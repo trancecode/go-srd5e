@@ -68,3 +68,26 @@ func (s AbilityScores) Score(a Ability) AbilityScore {
 		panic("core: Score requires a concrete ability")
 	}
 }
+
+// String returns the lowercase identifier of the ability, or "none" for
+// AbilityNone and "any" for AbilityAny.
+func (a Ability) String() string {
+	switch a {
+	case AbilityStrength:
+		return "strength"
+	case AbilityDexterity:
+		return "dexterity"
+	case AbilityConstitution:
+		return "constitution"
+	case AbilityIntelligence:
+		return "intelligence"
+	case AbilityWisdom:
+		return "wisdom"
+	case AbilityCharisma:
+		return "charisma"
+	case AbilityAny:
+		return "any"
+	default:
+		return "none"
+	}
+}
