@@ -63,3 +63,28 @@ func TestSkillStringRoundTrip(t *testing.T) {
 		}
 	}
 }
+
+// SetScore round-trips through Score for every concrete ability.
+func TestSetScore(t *testing.T) {
+	concrete := []Ability{
+		AbilityStrength, AbilityDexterity, AbilityConstitution,
+		AbilityIntelligence, AbilityWisdom, AbilityCharisma,
+	}
+	for i, a := range concrete {
+		var s AbilityScores
+		want := AbilityScore(10 + i)
+		s.SetScore(a, want)
+		if got := s.Score(a); got != want {
+			t.Errorf("SetScore(%s, %d) then Score = %d", a, want, got)
+		}
+		// No other ability was disturbed.
+		for _, other := range concrete {
+			if other == a {
+				continue
+			}
+			if got := s.Score(other); got != 0 {
+				t.Errorf("SetScore(%s) also set %s to %d", a, other, got)
+			}
+		}
+	}
+}

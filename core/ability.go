@@ -69,6 +69,27 @@ func (s AbilityScores) Score(a Ability) AbilityScore {
 	}
 }
 
+// SetScore sets the score for a concrete ability. It panics on AbilityNone or
+// AbilityAny, which are not concrete abilities.
+func (s *AbilityScores) SetScore(a Ability, v AbilityScore) {
+	switch a {
+	case AbilityStrength:
+		s.Strength = v
+	case AbilityDexterity:
+		s.Dexterity = v
+	case AbilityConstitution:
+		s.Constitution = v
+	case AbilityIntelligence:
+		s.Intelligence = v
+	case AbilityWisdom:
+		s.Wisdom = v
+	case AbilityCharisma:
+		s.Charisma = v
+	default:
+		panic("core: SetScore requires a concrete ability")
+	}
+}
+
 // String returns the lowercase identifier of the ability, or "none" for
 // AbilityNone and "any" for AbilityAny.
 func (a Ability) String() string {
