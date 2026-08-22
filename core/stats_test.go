@@ -51,7 +51,16 @@ func TestXp(t *testing.T) {
 	if got := XpForLevel(20); got != 355000 {
 		t.Errorf("XpForLevel(20) = %d, want 355000", got)
 	}
-	if got := XpForNextLevel(4); got != 6500 {
-		t.Errorf("XpForNextLevel(4) = %d, want 6500", got)
+	if got, ok := XpForNextLevel(4); !ok || got != 6500 {
+		t.Errorf("XpForNextLevel(4) = %d, %v; want 6500, true", got, ok)
+	}
+	if got, ok := XpForNextLevel(MaxLevel); ok {
+		t.Errorf("XpForNextLevel(%d) = %d, %v; want ok=false at max level", MaxLevel, got, ok)
+	}
+	if got := XpForLevel(0); got != 0 {
+		t.Errorf("XpForLevel(0) = %d, want 0", got)
+	}
+	if got := XpForLevel(MaxLevel + 1); got != 355000 {
+		t.Errorf("XpForLevel(%d) = %d, want the max-level threshold 355000", MaxLevel+1, got)
 	}
 }
