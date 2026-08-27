@@ -6,23 +6,127 @@ import (
 	"github.com/trancecode/go-srd5e/dice"
 )
 
-// ItemKind classifies an item.
+// ItemKind classifies an item. ItemUnspecified is the zero value and must
+// be set.
 type ItemKind int
 
 const (
 	ItemUnspecified ItemKind = iota
 	ItemWeapon
 	ItemArmor
+	ItemShield
+	ItemAmmunition
 	ItemGear
+	ItemTool
+	ItemPotion
+	ItemScroll
+	ItemWand
+	ItemRing
+	ItemWondrous
 )
 
-// Item is a weapon, armor, or gear shape. Weapons carry a damage.Spec; armor
-// carries an armor class. Games add their own flavor and rules data.
+// WeaponProperty is one of the SRD's weapon properties. PropertyNone is the
+// zero value, for weapons with none.
+type WeaponProperty int
+
+const (
+	PropertyNone WeaponProperty = iota
+	PropertyAmmunition
+	PropertyFinesse
+	PropertyHeavy
+	PropertyLight
+	PropertyLoading
+	PropertyReach
+	PropertySpecial
+	PropertyThrown
+	PropertyTwoHanded
+	PropertyVersatile
+)
+
+// WeaponCategory is the SRD's proficiency grouping of a weapon.
+type WeaponCategory int
+
+const (
+	WeaponCategoryNone WeaponCategory = iota
+	WeaponCategorySimple
+	WeaponCategoryMartial
+)
+
+// ArmorCategory is the SRD's grouping of armor, which decides the Dex cap
+// and the proficiency needed.
+type ArmorCategory int
+
+const (
+	ArmorCategoryNone ArmorCategory = iota
+	ArmorCategoryLight
+	ArmorCategoryMedium
+	ArmorCategoryHeavy
+	ArmorCategoryShield
+)
+
+// Item is an SRD equipment entry: what a kind of thing is, never where one
+// is. Weapons carry a damage.Spec, armor an armor class; the other fields
+// apply by Kind and are zero otherwise. Games add their own flavor and
+// rules data beside it.
 type Item struct {
-	Id, Name   string
-	Kind       ItemKind
-	Damage     *damage.Spec    // when ItemWeapon
-	ArmorClass core.ArmorClass // when ItemArmor
+	// Id is the item's stable identifier.
+	Id string
+	// Name is the item's display name.
+	Name string
+	// Kind classifies the item; see ItemKind.
+	Kind ItemKind
+	// Weight is the item's weight in pounds.
+	Weight core.Weight
+	// Cost is the item's price.
+	Cost core.Coins
+	// Stackable reports whether multiple units of the item occupy a single
+	// inventory slot.
+	Stackable bool
+
+	// Damage is the weapon's base damage. Set when Kind == ItemWeapon.
+	Damage *damage.Spec
+	// VersatileDamage is the two-handed damage for a weapon carrying
+	// PropertyVersatile; nil otherwise.
+	VersatileDamage *damage.Spec
+	// Properties lists the weapon's SRD properties.
+	Properties []WeaponProperty
+	// WeaponCategory is the weapon's proficiency grouping.
+	WeaponCategory WeaponCategory
+	// Melee reports whether the weapon is wielded in melee.
+	Melee bool
+	// Range is the weapon's normal range, for ranged and thrown weapons.
+	Range core.Distance
+	// LongRange is the weapon's long range, for ranged and thrown weapons.
+	LongRange core.Distance
+
+	// ArmorCategory is the armor's SRD grouping.
+	ArmorCategory ArmorCategory
+	// ArmorClass is the armor class the armor or shield grants.
+	ArmorClass core.ArmorClass
+	// MaxDexBonus caps the Dexterity modifier added to armor class;
+	// interpreted per ArmorCategory (light leaves it unrestricted, medium
+	// caps it, heavy allows none).
+	MaxDexBonus int
+	// StrengthRequired is the minimum Strength score needed to wear the
+	// armor without a speed penalty; zero means none.
+	StrengthRequired core.AbilityScore
+	// StealthDisadvantage reports whether wearing the armor imposes
+	// disadvantage on Stealth checks.
+	StealthDisadvantage bool
+
+	// Charges is the number of uses remaining, for items with charges such
+	// as wands.
+	Charges int
+}
+
+// HasProperty reports whether the weapon has a property.
+func (it Item) HasProperty(p WeaponProperty) bool {
+	for _, q := range it.Properties {
+		if q == p {
+			return true
+		}
+	}
+	return false
 }
 
 // Creature carries the stat-block fields the kernel pipeline reads (notably
