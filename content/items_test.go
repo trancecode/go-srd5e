@@ -39,6 +39,16 @@ func TestItemRoundTripsThroughJson(t *testing.T) {
 	}
 }
 
+// The SRD's equipment chapter prices no worn accessories, so no standard
+// item is one; ItemWorn is there for the games that define their own.
+func TestNoStandardItemIsWorn(t *testing.T) {
+	for _, it := range StandardItems() {
+		if it.Kind == ItemWorn {
+			t.Errorf("%s: the SRD ships no worn accessory", it.Id)
+		}
+	}
+}
+
 func TestItemHasProperty(t *testing.T) {
 	it := Item{Properties: []WeaponProperty{PropertyLight, PropertyFinesse}}
 	if !it.HasProperty(PropertyFinesse) || it.HasProperty(PropertyHeavy) {

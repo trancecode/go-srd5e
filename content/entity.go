@@ -23,6 +23,10 @@ const (
 	ItemWand
 	ItemRing
 	ItemWondrous
+	// ItemWorn is a mundane worn accessory the SRD's equipment chapter
+	// does not price as armour: a helmet, boots, bracers, a necklace, a
+	// cloak. Games define the entries they need; the SRD ships none.
+	ItemWorn
 )
 
 // WeaponProperty is one of the SRD's weapon properties. PropertyNone is the
