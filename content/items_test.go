@@ -20,7 +20,7 @@ func TestItemRoundTripsThroughJson(t *testing.T) {
 	d10, _ := dice.Parse("1d10")
 	in := Item{
 		Id: "longsword", Name: "Longsword", Kind: ItemWeapon,
-		Weight: 3, Cost: core.Gp(15),
+		Weight: 0.25, Cost: core.Gp(15),
 		Damage:          &damage.Spec{Parts: []damage.PartSpec{{Dice: d8, Type: core.Slashing}}},
 		VersatileDamage: &damage.Spec{Parts: []damage.PartSpec{{Dice: d10, Type: core.Slashing}}},
 		Properties:      []WeaponProperty{PropertyVersatile},
@@ -34,7 +34,7 @@ func TestItemRoundTripsThroughJson(t *testing.T) {
 	if err := json.Unmarshal(b, &out); err != nil {
 		t.Fatal(err)
 	}
-	if out.Id != in.Id || out.Kind != in.Kind || out.Cost != in.Cost || len(out.Properties) != 1 || out.Damage == nil || out.VersatileDamage == nil {
+	if out.Id != in.Id || out.Kind != in.Kind || out.Cost != in.Cost || out.Weight != in.Weight || len(out.Properties) != 1 || out.Damage == nil || out.VersatileDamage == nil {
 		t.Errorf("round trip lost fields: %+v", out)
 	}
 }
