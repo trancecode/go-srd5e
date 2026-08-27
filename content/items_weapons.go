@@ -8,7 +8,8 @@ import (
 
 // weapon builds one SRD weapon entry. The dice are parsed once at package
 // initialisation; a bad expression is a programming error. dmg is empty for
-// a weapon with no damage die (the net).
+// a weapon with no damage die (the net), and dt is then the zero
+// core.DamageType: there is no damage to have a type.
 func weapon(id, name string, cat WeaponCategory, cost core.Coins, weight core.Weight, dmg string, dt core.DamageType, props ...WeaponProperty) Item {
 	it := Item{Id: id, Name: name, Kind: ItemWeapon, WeaponCategory: cat, Cost: cost, Weight: weight, Properties: props, Melee: true}
 	if dmg != "" {
@@ -87,6 +88,6 @@ func Weapons() []Item {
 		weapon("crossbow-heavy", "Crossbow, heavy", WeaponCategoryMartial, core.Gp(50), 18, "1d10", core.Piercing, PropertyAmmunition, PropertyHeavy, PropertyLoading, PropertyTwoHanded).ranged(100, 400),
 		weapon("longbow", "Longbow", WeaponCategoryMartial, core.Gp(50), 2, "1d8", core.Piercing, PropertyAmmunition, PropertyHeavy, PropertyTwoHanded).ranged(150, 600),
 		// The net has no damage die: it restrains rather than hurts.
-		weapon("net", "Net", WeaponCategoryMartial, core.Gp(1), 3, "", core.Bludgeoning, PropertySpecial, PropertyThrown).ranged(5, 15),
+		weapon("net", "Net", WeaponCategoryMartial, core.Gp(1), 3, "", core.DamageType{}, PropertySpecial, PropertyThrown).ranged(5, 15),
 	}
 }

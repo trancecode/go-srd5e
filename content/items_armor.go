@@ -26,11 +26,11 @@ func Armor() []Item {
 		// Light armor.
 		armor("padded", "Padded", ArmorCategoryLight, core.Gp(5), 8, 11, -1, 0, true),
 		armor("leather", "Leather", ArmorCategoryLight, core.Gp(10), 10, 11, -1, 0, false),
-		armor("studded-leather", "Studded Leather", ArmorCategoryLight, core.Gp(45), 13, 12, -1, 0, false),
+		armor("studded-leather", "Studded leather", ArmorCategoryLight, core.Gp(45), 13, 12, -1, 0, false),
 
 		// Medium armor.
 		armor("hide", "Hide", ArmorCategoryMedium, core.Gp(10), 12, 12, 2, 0, false),
-		armor("chain-shirt", "Chain Shirt", ArmorCategoryMedium, core.Gp(50), 20, 13, 2, 0, false),
+		armor("chain-shirt", "Chain shirt", ArmorCategoryMedium, core.Gp(50), 20, 13, 2, 0, false),
 		armor("scale-mail", "Scale mail", ArmorCategoryMedium, core.Gp(50), 45, 14, 2, 0, true),
 		armor("breastplate", "Breastplate", ArmorCategoryMedium, core.Gp(400), 20, 14, 2, 0, false),
 		armor("half-plate", "Half plate", ArmorCategoryMedium, core.Gp(750), 40, 15, 2, 0, true),

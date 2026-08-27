@@ -5,6 +5,31 @@ All notable changes to this module are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/), and this
 module follows [Semantic Versioning](https://semver.org/).
 
+## v1.3.0
+
+Additive throughout: nothing existing changed shape or value, so a v1.2.0
+consumer builds unchanged.
+
+### Added
+
+* `content.Item.Quantity`, the number of units the SRD entry prices and
+  weighs as one purchase (arrows are sold twenty at a time); zero means a
+  single thing. Cost and weight describe the bundle, and the ammunition
+  entries are now named for the unit ("Arrow", not "Arrows (20)").
+* `content.ItemWorn`, the kind for mundane worn accessories the SRD's
+  equipment chapter does not price as armour: helmets, boots, bracers,
+  necklaces, cloaks. Games define the entries; the SRD ships none.
+* A `weapons` mode in `content/testdata/fetch-srd-2014.py`, so the weapon
+  fixture regenerates alongside the armour and item ones.
+
+### Changed
+
+* Item names follow the SRD 5.1 tables' sentence case where they carried
+  Open5e's title case: "Studded leather", "Chain shirt", "Thieves' tools".
+* `Item.MaxDexBonus` and `Item.Charges` document their conventions on the
+  field: -1 uncapped, 0 none, N the printed cap; and the charges a new one
+  has, not what one of them has left.
+
 ## v1.2.0
 
 ### Added
