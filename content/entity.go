@@ -82,6 +82,11 @@ type Item struct {
 	// Stackable reports whether multiple units of the item occupy a single
 	// inventory slot.
 	Stackable bool
+	// Quantity is the number of units the SRD entry prices and weighs as
+	// one purchase: arrows are sold twenty at a time. Zero means a single
+	// thing. Cost and Weight describe the whole bundle, not one unit,
+	// while Name is the singular unit ("Arrow").
+	Quantity int
 
 	// Damage is the weapon's base damage. Set when Kind == ItemWeapon.
 	Damage *damage.Spec
