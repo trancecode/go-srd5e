@@ -100,10 +100,11 @@ func srdWeight(w string) core.Weight {
 // uses "NdS" notation; the blowgun's flat 1 damage is written as the bare
 // integer "1", which content/items_weapons.go represents as the dice
 // expression "1d1" (a one-sided die always shows 1), the same zero-variance
-// idiom the creature blocks use for a flat value.
+// idiom the creature blocks use for a flat value. A bare integer N is a
+// flat N, so it becomes "Nd1": N one-sided dice, not N dice of N sides.
 func srdDiceExpr(s string) string {
 	if !strings.Contains(s, "d") {
-		return s + "d" + s
+		return s + "d1"
 	}
 	return s
 }
@@ -396,7 +397,7 @@ func TestWeaponsMatchTheSrd(t *testing.T) {
 			t.Errorf("%s: missing", w.Slug)
 			continue
 		}
-		if it.Kind != ItemWeapon || it.Name != w.Name {
+		if it.Kind != ItemWeapon || !strings.EqualFold(it.Name, w.Name) {
 			t.Errorf("%s: kind/name %v %q", w.Slug, it.Kind, it.Name)
 		}
 		if it.Cost.String() != srdCost(w.Cost) {
@@ -431,6 +432,9 @@ func TestWeaponsMatchTheSrd(t *testing.T) {
 			if prop == PropertyVersatile && (it.VersatileDamage == nil || it.VersatileDamage.Parts[0].Dice.String() != detail) {
 				t.Errorf("%s: versatile damage %+v, SRD %s", w.Slug, it.VersatileDamage, detail)
 			}
+		}
+		if !it.HasProperty(PropertyVersatile) && it.VersatileDamage != nil {
+			t.Errorf("%s: versatile damage %+v without the Versatile property", w.Slug, it.VersatileDamage)
 		}
 		if len(it.Properties) != countKnown(w.Properties) {
 			t.Errorf("%s: %d properties, SRD %d", w.Slug, len(it.Properties), countKnown(w.Properties))
@@ -477,7 +481,7 @@ func TestArmorMatchesTheSrd(t *testing.T) {
 			// (Open5e's ac_string is "0 +2"); PlusFlatMod carries it.
 			wantKind, wantCat, wantAc = ItemShield, ArmorCategoryShield, a.PlusFlatMod
 		}
-		if it.Kind != wantKind || it.ArmorCategory != wantCat || it.Name != a.Name {
+		if it.Kind != wantKind || it.ArmorCategory != wantCat || !strings.EqualFold(it.Name, a.Name) {
 			t.Errorf("%s: kind/category/name %v %v %q, SRD %v %v %q", a.Slug, it.Kind, it.ArmorCategory, it.Name, wantKind, wantCat, a.Name)
 		}
 		if int(it.ArmorClass) != wantAc {

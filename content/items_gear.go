@@ -32,7 +32,7 @@ func Gear() []Item {
 		ammunition("crossbow-bolt", "Crossbow bolt", 20, core.Gp(1), 1.5),
 		ammunition("sling-bullet", "Sling bullet", 20, core.Cp(4), 1.5),
 
-		gear("thieves-tools", "Thieves' Tools", ItemTool, core.Gp(25), 1),
+		gear("thieves-tools", "Thieves' tools", ItemTool, core.Gp(25), 1),
 
 		gear("rations", "Rations (1 day)", ItemGear, core.Sp(5), 2),
 		gear("torch", "Torch", ItemGear, core.Cp(1), 1),

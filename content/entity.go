@@ -112,9 +112,9 @@ type Item struct {
 	ArmorCategory ArmorCategory
 	// ArmorClass is the armor class the armor or shield grants.
 	ArmorClass core.ArmorClass
-	// MaxDexBonus caps the Dexterity modifier added to armor class;
-	// interpreted per ArmorCategory (light leaves it unrestricted, medium
-	// caps it, heavy allows none).
+	// MaxDexBonus caps the Dexterity modifier added to armor class: -1
+	// for an uncapped modifier (light armor), 0 for none (heavy armor),
+	// and N for the printed cap (medium armor caps it at 2).
 	MaxDexBonus int
 	// StrengthRequired is the minimum Strength score needed to wear the
 	// armor without a speed penalty; zero means none.
@@ -123,8 +123,9 @@ type Item struct {
 	// disadvantage on Stealth checks.
 	StealthDisadvantage bool
 
-	// Charges is the number of uses remaining, for items with charges such
-	// as wands.
+	// Charges is the number of charges a new one has, for items with
+	// charges such as wands. It is a property of the kind of thing, not of
+	// one of them: what a given wand has left is the game's to track.
 	Charges int
 }
 
