@@ -1,0 +1,72 @@
+[
+ {
+  "key": "srd_arrow",
+  "name": "Arrows (20)",
+  "category": "ammunition",
+  "cost": "1 gp",
+  "weight": "1 lb."
+ },
+ {
+  "key": "srd_blowgun-needle",
+  "name": "Blowgun needles (50)",
+  "category": "ammunition",
+  "cost": "1 gp",
+  "weight": "1 lb."
+ },
+ {
+  "key": "srd_crossbow-bolt",
+  "name": "Crossbow bolts (20)",
+  "category": "ammunition",
+  "cost": "1 gp",
+  "weight": "1.6 lb."
+ },
+ {
+  "key": "srd_sling-bullet",
+  "name": "Sling bullets (20)",
+  "category": "ammunition",
+  "cost": "20 cp",
+  "weight": "1.5 lb."
+ },
+ {
+  "key": "srd_thieves-tools",
+  "name": "Thieves' Tools",
+  "category": "tools",
+  "cost": "25 gp",
+  "weight": "1 lb."
+ },
+ {
+  "key": "srd_rations",
+  "name": "Rations (1 day)",
+  "category": "adventuring-gear",
+  "cost": "5 sp",
+  "weight": "2 lb."
+ },
+ {
+  "key": "srd_torch",
+  "name": "Torch",
+  "category": "adventuring-gear",
+  "cost": "1 cp",
+  "weight": "1 lb."
+ },
+ {
+  "key": "srd_rope-hempen",
+  "name": "Rope, hempen (50 feet)",
+  "category": "adventuring-gear",
+  "cost": "1 gp",
+  "weight": "10 lb."
+ },
+ {
+  "key": "srd_waterskin",
+  "name": "Waterskin",
+  "category": "adventuring-gear",
+  "cost": "2 sp",
+  "weight": "5 lb."
+ },
+ {
+  "key": "srd_backpack",
+  "name": "Backpack",
+  "category": "adventuring-gear",
+  "cost": "2 gp",
+  "weight": "5 lb."
+ }
+]
