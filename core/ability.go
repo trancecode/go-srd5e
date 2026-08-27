@@ -11,7 +11,7 @@ type (
 	Distance     int // feet
 	HitPoints    int
 	Xp           int
-	Weight       int // pounds
+	Weight       float64 // pounds; the SRD lists fractional weights (e.g. a dart at 1/4 lb.)
 )
 
 // Ability is the closed set of the six SRD abilities. AbilityAny is a wildcard

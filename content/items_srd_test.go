@@ -12,21 +12,24 @@ import (
 	"github.com/trancecode/go-srd5e/core"
 )
 
+// srdProperty is one weapon property as Open5e's v2 API serves it.
+type srdProperty struct {
+	Name   string `json:"name"`
+	Detail string `json:"detail"`
+}
+
 type srdWeapon struct {
-	Key        string  `json:"key"`
-	Name       string  `json:"name"`
-	Cost       string  `json:"cost"`
-	Weight     string  `json:"weight"`
-	DamageDice string  `json:"damage_dice"`
-	DamageType string  `json:"damage_type"`
-	IsSimple   bool    `json:"is_simple"`
-	IsMartial  bool    `json:"is_martial"`
-	Range      float64 `json:"range"`
-	LongRange  float64 `json:"long_range"`
-	Properties []struct {
-		Name   string `json:"name"`
-		Detail string `json:"detail"`
-	} `json:"properties"`
+	Key        string        `json:"key"`
+	Name       string        `json:"name"`
+	Cost       string        `json:"cost"`
+	Weight     string        `json:"weight"`
+	DamageDice string        `json:"damage_dice"`
+	DamageType string        `json:"damage_type"`
+	IsSimple   bool          `json:"is_simple"`
+	IsMartial  bool          `json:"is_martial"`
+	Range      float64       `json:"range"`
+	LongRange  float64       `json:"long_range"`
+	Properties []srdProperty `json:"properties"`
 }
 
 func loadFixture[T any](t *testing.T, name string) []T {
@@ -53,6 +56,55 @@ func byId(items []Item) map[string]Item {
 	return m
 }
 
+// srdCorrection is one place the SRD 5.1 weapon table, as Open5e's v2 API
+// currently serves it, demonstrably departs from the SRD 5.1 text itself.
+// The SRD text is the authority; Open5e only serves it. apply corrects one
+// fetched fixture row in place before it is compared against production, so
+// production (content/items_weapons.go) carries the SRD's own value and this
+// table is the single place documenting why it differs from the raw fetch
+// kept, untouched, in testdata/srd-2014-weapons.json.
+type srdCorrection struct {
+	key    string
+	reason string
+	apply  func(*srdWeapon)
+}
+
+var srdCorrections = []srdCorrection{
+	{
+		key:    "srd_crossbow-heavy",
+		reason: `heavy-crossbow: add property Ammunition (SRD 5.1: "Ammunition (range 100/400), heavy, loading, two-handed")`,
+		apply: func(w *srdWeapon) {
+			w.Properties = append(w.Properties, srdProperty{Name: "Ammunition", Detail: "range 100/400"})
+		},
+	},
+	{
+		key:    "srd_handaxe",
+		reason: `handaxe: add property Thrown (SRD 5.1: "Light, thrown (range 20/60)")`,
+		apply: func(w *srdWeapon) {
+			w.Properties = append(w.Properties, srdProperty{Name: "Thrown", Detail: "range 20/60"})
+		},
+	},
+	{
+		key:    "srd_greatsword",
+		reason: `greatsword: weight 6 (SRD 5.1: 6 lb.)`,
+		apply: func(w *srdWeapon) {
+			w.Weight = "6.000"
+		},
+	},
+}
+
+// applyCorrections returns w with any known Open5e departure from the SRD
+// 5.1 text corrected, so the rest of TestWeaponsMatchTheSrd compares
+// production against the SRD, not against a gap in how Open5e serves it.
+func applyCorrections(w srdWeapon) srdWeapon {
+	for _, c := range srdCorrections {
+		if c.key == w.Key {
+			c.apply(&w)
+		}
+	}
+	return w
+}
+
 // srdCost parses Open5e's decimal gold amount ("15.00", "0.10", "0.02") and
 // renders it the way core.Coins does ("15 gp", "1 sp", "2 cp").
 func srdCost(gp string) string {
@@ -65,17 +117,14 @@ func srdCost(gp string) string {
 	return core.Coins(math.Round(f * 100)).String()
 }
 
-// srdWeight parses Open5e's decimal pound weight ("3.000") into
-// core.Weight. core.Weight is whole pounds (it predates this package and is
-// shared by encumbrance rules elsewhere in the kernel), so a fractional SRD
-// weight rounds to the nearest pound; the only SRD 5.1 weapon this affects
-// is the dart, at 1/4 lb, which rounds to 0.
+// srdWeight parses Open5e's decimal pound weight ("3.000", "0.250") into
+// core.Weight.
 func srdWeight(w string) core.Weight {
 	f, err := strconv.ParseFloat(w, 64)
 	if err != nil {
 		panic(fmt.Sprintf("parsing SRD weight %q: %v", w, err))
 	}
-	return core.Weight(math.Round(f))
+	return core.Weight(f)
 }
 
 // srdDiceExpr normalizes Open5e's damage_dice text into the notation
@@ -132,10 +181,7 @@ func propertyByName(name string) (WeaponProperty, bool) {
 }
 
 // countKnown counts the fixture properties propertyByName recognizes.
-func countKnown(props []struct {
-	Name   string `json:"name"`
-	Detail string `json:"detail"`
-}) int {
+func countKnown(props []srdProperty) int {
 	n := 0
 	for _, p := range props {
 		if _, ok := propertyByName(p.Name); ok {
@@ -158,15 +204,17 @@ func TestSrdCost(t *testing.T) {
 	}
 }
 
-// Every SRD 5.1 weapon is present, once, and every pinned field matches
-// the SRD text as Open5e serves it.
+// Every SRD 5.1 weapon is present, once, and every pinned field matches the
+// SRD 5.1 text, corrected (via srdCorrections, above) for the few places
+// Open5e's fetched data demonstrably departs from that text.
 func TestWeaponsMatchTheSrd(t *testing.T) {
-	want := loadFixture[srdWeapon](t, "srd-2014-weapons.json")
+	fixture := loadFixture[srdWeapon](t, "srd-2014-weapons.json")
 	got := byId(Weapons())
-	if len(Weapons()) != len(want) || len(got) != len(want) {
-		t.Errorf("Weapons() has %d entries (%d distinct ids), fixture has %d", len(Weapons()), len(got), len(want))
+	if len(Weapons()) != len(fixture) || len(got) != len(fixture) {
+		t.Errorf("Weapons() has %d entries (%d distinct ids), fixture has %d", len(Weapons()), len(got), len(fixture))
 	}
-	for _, w := range want {
+	for _, raw := range fixture {
+		w := applyCorrections(raw)
 		it, ok := got[idOf(w.Key)]
 		if !ok {
 			t.Errorf("%s: missing", w.Key)
@@ -209,8 +257,10 @@ func TestWeaponsMatchTheSrd(t *testing.T) {
 		if len(it.Properties) != countKnown(w.Properties) {
 			t.Errorf("%s: %d properties, SRD %d", w.Key, len(it.Properties), countKnown(w.Properties))
 		}
-		if it.Melee != (w.Range == 0 || it.HasProperty(PropertyThrown)) {
-			t.Errorf("%s: melee=%v is inconsistent with range %v and thrown", w.Key, it.Melee, w.Range)
+		// The SRD's rule: a weapon with the Ammunition property is not a
+		// melee weapon; every other weapon (including a thrown one) is.
+		if it.Melee == it.HasProperty(PropertyAmmunition) {
+			t.Errorf("%s: melee=%v is inconsistent with ammunition=%v", w.Key, it.Melee, it.HasProperty(PropertyAmmunition))
 		}
 	}
 }

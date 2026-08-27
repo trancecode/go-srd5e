@@ -5,17 +5,17 @@ import "testing"
 func TestCarryingCapacity(t *testing.T) {
 	// STR 15, Medium: 15*15 = 225; push/drag/lift = 450.
 	if got := CarryingCapacity(15, SizeMedium); got != 225 {
-		t.Errorf("CarryingCapacity Medium = %d, want 225", got)
+		t.Errorf("CarryingCapacity Medium = %v, want 225", got)
 	}
 	if got := PushDragLift(15, SizeMedium); got != 450 {
-		t.Errorf("PushDragLift Medium = %d, want 450", got)
+		t.Errorf("PushDragLift Medium = %v, want 450", got)
 	}
 	// Large doubles, Tiny halves.
 	if got := CarryingCapacity(15, SizeLarge); got != 450 {
-		t.Errorf("CarryingCapacity Large = %d, want 450", got)
+		t.Errorf("CarryingCapacity Large = %v, want 450", got)
 	}
 	if got := CarryingCapacity(10, SizeTiny); got != 75 {
-		t.Errorf("CarryingCapacity Tiny = %d, want 75", got)
+		t.Errorf("CarryingCapacity Tiny = %v, want 75", got)
 	}
 }
 

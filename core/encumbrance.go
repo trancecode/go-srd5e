@@ -33,7 +33,11 @@ func sizeFactor(size Size) (num, den int) {
 	}
 }
 
-// CarryingCapacity is Strength x 15, scaled by size.
+// CarryingCapacity is Strength x 15, scaled by size. The SRD's multiplier is
+// computed in integer arithmetic (matching the whole-pound results the SRD
+// table lists) and only then converted to Weight, so this never introduces
+// fractional pounds of its own; Weight is a float only because some SRD
+// items (e.g. a dart at 1/4 lb.) are.
 func CarryingCapacity(str AbilityScore, size Size) Weight {
 	num, den := sizeFactor(size)
 	return Weight(int(str) * 15 * num / den)
@@ -59,9 +63,9 @@ const (
 // call it.
 func EncumbranceTier(str AbilityScore, carried Weight) Encumbrance {
 	switch {
-	case int(carried) > int(str)*10:
+	case carried > Weight(int(str)*10):
 		return HeavilyEncumbered
-	case int(carried) > int(str)*5:
+	case carried > Weight(int(str)*5):
 		return Encumbered
 	default:
 		return Unencumbered
