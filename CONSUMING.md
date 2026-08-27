@@ -15,5 +15,6 @@ For day-to-day development across several repos at once, point a consumer's
 replace github.com/trancecode/go-srd5e => ../go-srd5e
 ```
 
-Drop the `replace` and pin a tagged version (for example `v0.1.0`) once the
-module is stable.
+Consumers pin a tagged version (for example `v1.2.0`); the `replace` directive
+above is for local, cross-repo development only and should not land in a
+committed `go.mod`.
