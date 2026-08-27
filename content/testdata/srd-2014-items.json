@@ -1,72 +1,1661 @@
 [
  {
-  "key": "srd_arrow",
-  "name": "Arrows (20)",
-  "category": "ammunition",
-  "cost": "1 gp",
-  "weight": "1 lb."
+  "key": "srd_abacus",
+  "name": "Abacus",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "2.000"
  },
  {
-  "key": "srd_blowgun-needle",
-  "name": "Blowgun needles (50)",
-  "category": "ammunition",
-  "cost": "1 gp",
-  "weight": "1 lb."
+  "key": "srd_acid",
+  "name": "Acid",
+  "category": "adventuring-gear",
+  "cost": "0.00",
+  "weight": "0.000"
  },
  {
-  "key": "srd_crossbow-bolt",
-  "name": "Crossbow bolts (20)",
-  "category": "ammunition",
-  "cost": "1 gp",
-  "weight": "1.6 lb."
+  "key": "srd_acid-vial",
+  "name": "Acid (vial)",
+  "category": "adventuring-gear",
+  "cost": "25.00",
+  "weight": "1.000"
  },
  {
-  "key": "srd_sling-bullet",
-  "name": "Sling bullets (20)",
-  "category": "ammunition",
-  "cost": "20 cp",
-  "weight": "1.5 lb."
+  "key": "srd_alchemists-fire-flask",
+  "name": "Alchemist's Fire (Flask)",
+  "category": "adventuring-gear",
+  "cost": "50.00",
+  "weight": "1.000"
  },
  {
-  "key": "srd_thieves-tools",
-  "name": "Thieves' Tools",
+  "key": "srd_alchemists-supplies",
+  "name": "Alchemist's Supplies",
   "category": "tools",
-  "cost": "25 gp",
-  "weight": "1 lb."
+  "cost": "50.00",
+  "weight": "8.000"
  },
  {
-  "key": "srd_rations",
-  "name": "Rations (1 day)",
+  "key": "srd_amulet",
+  "name": "Amulet",
   "category": "adventuring-gear",
-  "cost": "5 sp",
-  "weight": "2 lb."
+  "cost": "5.00",
+  "weight": "1.000"
  },
  {
-  "key": "srd_torch",
-  "name": "Torch",
+  "key": "srd_antitoxin-vial",
+  "name": "Antitoxin (Vial)",
   "category": "adventuring-gear",
-  "cost": "1 cp",
-  "weight": "1 lb."
+  "cost": "50.00",
+  "weight": "0.000"
  },
  {
-  "key": "srd_rope-hempen",
-  "name": "Rope, hempen (50 feet)",
-  "category": "adventuring-gear",
-  "cost": "1 gp",
-  "weight": "10 lb."
+  "key": "srd_arrow-bow",
+  "name": "Arrow (bow)",
+  "category": "ammunition",
+  "cost": "0.05",
+  "weight": "0.050"
  },
  {
-  "key": "srd_waterskin",
-  "name": "Waterskin",
-  "category": "adventuring-gear",
-  "cost": "2 sp",
-  "weight": "5 lb."
+  "key": "srd_assassins-blood",
+  "name": "Assassin's Blood",
+  "category": "poison",
+  "cost": "150.00",
+  "weight": "0.000"
  },
  {
   "key": "srd_backpack",
   "name": "Backpack",
   "category": "adventuring-gear",
-  "cost": "2 gp",
-  "weight": "5 lb."
+  "cost": "2.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_bagpipes",
+  "name": "Bagpipes",
+  "category": "tools",
+  "cost": "30.00",
+  "weight": "6.000"
+ },
+ {
+  "key": "srd_ball-bearings-bag-of-1000",
+  "name": "Ball Bearings (bag of 1000)",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_barrel",
+  "name": "Barrel",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "70.000"
+ },
+ {
+  "key": "srd_basket",
+  "name": "Basket",
+  "category": "adventuring-gear",
+  "cost": "0.40",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_battleaxe",
+  "name": "Battleaxe",
+  "category": "weapon",
+  "cost": "10.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_bedroll",
+  "name": "Bedroll",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "7.000"
+ },
+ {
+  "key": "srd_bell",
+  "name": "Bell",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_blanket",
+  "name": "Blanket",
+  "category": "adventuring-gear",
+  "cost": "0.50",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_block-and-tackle",
+  "name": "Block and Tackle",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_blowgun",
+  "name": "Blowgun",
+  "category": "weapon",
+  "cost": "10.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_blowgun-needles",
+  "name": "Blowgun needles",
+  "category": "ammunition",
+  "cost": "0.02",
+  "weight": "0.020"
+ },
+ {
+  "key": "srd_book",
+  "name": "Book",
+  "category": "adventuring-gear",
+  "cost": "25.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_bottle-glass",
+  "name": "Bottle, glass",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_breastplate",
+  "name": "Breastplate",
+  "category": "armor",
+  "cost": "400.00",
+  "weight": "20.000"
+ },
+ {
+  "key": "srd_brewers-supplies",
+  "name": "Brewer's Supplies",
+  "category": "tools",
+  "cost": "20.00",
+  "weight": "9.000"
+ },
+ {
+  "key": "srd_bucket",
+  "name": "Bucket",
+  "category": "adventuring-gear",
+  "cost": "0.05",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_burnt-othur-fumes",
+  "name": "Burnt othur fumes",
+  "category": "poison",
+  "cost": "500.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_calligraphers-supplies",
+  "name": "Calligrapher's supplies",
+  "category": "tools",
+  "cost": "10.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_caltrops-bag-of-20",
+  "name": "Caltrops (bag of 20)",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_candle",
+  "name": "Candle",
+  "category": "adventuring-gear",
+  "cost": "0.01",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_canvas",
+  "name": "Canvas",
+  "category": "trade-good",
+  "cost": "0.10",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_carpenters-tools",
+  "name": "Carpenter's Tools",
+  "category": "tools",
+  "cost": "8.00",
+  "weight": "6.000"
+ },
+ {
+  "key": "srd_carriage",
+  "name": "Carriage",
+  "category": "land-vehicle",
+  "cost": "100.00",
+  "weight": "600.000"
+ },
+ {
+  "key": "srd_cart",
+  "name": "Cart",
+  "category": "land-vehicle",
+  "cost": "15.00",
+  "weight": "200.000"
+ },
+ {
+  "key": "srd_cartographers-tools",
+  "name": "Cartographer's Tools",
+  "category": "tools",
+  "cost": "15.00",
+  "weight": "6.000"
+ },
+ {
+  "key": "srd_case-crossbow-bolt",
+  "name": "Case, Crossbow Bolt",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_case-map-or-scroll",
+  "name": "Case, Map or Scroll",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_chain-10-feet",
+  "name": "Chain (10 feet)",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "10.000"
+ },
+ {
+  "key": "srd_chain-mail",
+  "name": "Chain mail",
+  "category": "armor",
+  "cost": "75.00",
+  "weight": "55.000"
+ },
+ {
+  "key": "srd_chain-shirt",
+  "name": "Chain shirt",
+  "category": "armor",
+  "cost": "50.00",
+  "weight": "20.000"
+ },
+ {
+  "key": "srd_chalk-1-piece",
+  "name": "Chalk (1 piece)",
+  "category": "adventuring-gear",
+  "cost": "0.01",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_chariot",
+  "name": "Chariot",
+  "category": "land-vehicle",
+  "cost": "250.00",
+  "weight": "100.000"
+ },
+ {
+  "key": "srd_chest",
+  "name": "Chest",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "25.000"
+ },
+ {
+  "key": "srd_chicken",
+  "name": "Chicken",
+  "category": "trade-good",
+  "cost": "0.02",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_cinnamon",
+  "name": "Cinnamon",
+  "category": "trade-good",
+  "cost": "2.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_climbers-kit",
+  "name": "Climber's Kit",
+  "category": "adventuring-gear",
+  "cost": "25.00",
+  "weight": "12.000"
+ },
+ {
+  "key": "srd_clothes-common",
+  "name": "Clothes, Common",
+  "category": "adventuring-gear",
+  "cost": "0.50",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_clothes-costume",
+  "name": "Clothes, costume",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_clothes-fine",
+  "name": "Clothes, fine",
+  "category": "adventuring-gear",
+  "cost": "15.00",
+  "weight": "6.000"
+ },
+ {
+  "key": "srd_clothes-travelers",
+  "name": "Clothes, traveler's",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_cloves",
+  "name": "Cloves",
+  "category": "trade-good",
+  "cost": "3.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_club",
+  "name": "Club",
+  "category": "weapon",
+  "cost": "0.10",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_cobblers-tools",
+  "name": "Cobbler's Tools",
+  "category": "tools",
+  "cost": "5.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_component-pouch",
+  "name": "Component Pouch",
+  "category": "adventuring-gear",
+  "cost": "25.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_cooks-utensils",
+  "name": "Cook's utensils",
+  "category": "tools",
+  "cost": "1.00",
+  "weight": "8.000"
+ },
+ {
+  "key": "srd_copper",
+  "name": "Copper",
+  "category": "trade-good",
+  "cost": "0.50",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_copper-piece",
+  "name": "Copper Piece",
+  "category": "trade-good",
+  "cost": "0.01",
+  "weight": "0.020"
+ },
+ {
+  "key": "srd_cotton-cloth",
+  "name": "Cotton Cloth",
+  "category": "trade-good",
+  "cost": "0.50",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_cow",
+  "name": "Cow",
+  "category": "trade-good",
+  "cost": "10.00",
+  "weight": "1000.000"
+ },
+ {
+  "key": "srd_crawler-mucus",
+  "name": "Crawler mucus",
+  "category": "poison",
+  "cost": "200.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_crossbow-bolt",
+  "name": "Crossbow bolt",
+  "category": "ammunition",
+  "cost": "0.05",
+  "weight": "0.080"
+ },
+ {
+  "key": "srd_crossbow-hand",
+  "name": "Crossbow, hand",
+  "category": "weapon",
+  "cost": "75.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_crossbow-heavy",
+  "name": "Crossbow, heavy",
+  "category": "weapon",
+  "cost": "50.00",
+  "weight": "18.000"
+ },
+ {
+  "key": "srd_crossbow-light",
+  "name": "Crossbow, light",
+  "category": "weapon",
+  "cost": "25.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_crowbar",
+  "name": "Crowbar",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_crystal",
+  "name": "Crystal",
+  "category": "adventuring-gear",
+  "cost": "10.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_dagger",
+  "name": "Dagger",
+  "category": "weapon",
+  "cost": "2.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_dart",
+  "name": "Dart",
+  "category": "weapon",
+  "cost": "0.05",
+  "weight": "0.250"
+ },
+ {
+  "key": "srd_dice-set",
+  "name": "Dice set",
+  "category": "tools",
+  "cost": "0.10",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_disguise-kit",
+  "name": "Disguise kit",
+  "category": "tools",
+  "cost": "25.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_drow-poison",
+  "name": "Drow poison",
+  "category": "poison",
+  "cost": "200.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_drum",
+  "name": "Drum",
+  "category": "tools",
+  "cost": "6.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_dulcimer",
+  "name": "Dulcimer",
+  "category": "tools",
+  "cost": "25.00",
+  "weight": "10.000"
+ },
+ {
+  "key": "srd_electrum-piece",
+  "name": "Electrum Piece",
+  "category": "trade-good",
+  "cost": "0.50",
+  "weight": "0.020"
+ },
+ {
+  "key": "srd_emblem",
+  "name": "Emblem",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_essense-of-either",
+  "name": "Essense of either",
+  "category": "poison",
+  "cost": "300.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_fishing-tackle",
+  "name": "Fishing Tackle",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_flail",
+  "name": "Flail",
+  "category": "weapon",
+  "cost": "10.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_flask-or-tankard",
+  "name": "Flask or tankard",
+  "category": "adventuring-gear",
+  "cost": "0.02",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_flour",
+  "name": "Flour",
+  "category": "trade-good",
+  "cost": "0.02",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_flute",
+  "name": "Flute",
+  "category": "tools",
+  "cost": "2.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_forgery-kit",
+  "name": "Forgery kit",
+  "category": "tools",
+  "cost": "15.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_galley",
+  "name": "Galley",
+  "category": "waterborne-vehicle",
+  "cost": "30000.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_ginger",
+  "name": "Ginger",
+  "category": "trade-good",
+  "cost": "1.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_glaive",
+  "name": "Glaive",
+  "category": "weapon",
+  "cost": "20.00",
+  "weight": "6.000"
+ },
+ {
+  "key": "srd_glassblowers-tools",
+  "name": "Glassblower's Tools",
+  "category": "tools",
+  "cost": "30.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_goat",
+  "name": "Goat",
+  "category": "trade-good",
+  "cost": "1.00",
+  "weight": "75.000"
+ },
+ {
+  "key": "srd_gold",
+  "name": "Gold",
+  "category": "trade-good",
+  "cost": "50.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_gold-piece",
+  "name": "Gold Piece",
+  "category": "trade-good",
+  "cost": "1.00",
+  "weight": "0.020"
+ },
+ {
+  "key": "srd_grappling-hook",
+  "name": "Grappling hook",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_greataxe",
+  "name": "Greataxe",
+  "category": "weapon",
+  "cost": "30.00",
+  "weight": "7.000"
+ },
+ {
+  "key": "srd_greatclub",
+  "name": "Greatclub",
+  "category": "weapon",
+  "cost": "0.20",
+  "weight": "10.000"
+ },
+ {
+  "key": "srd_greatsword",
+  "name": "Greatsword",
+  "category": "weapon",
+  "cost": "50.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_halberd",
+  "name": "Halberd",
+  "category": "weapon",
+  "cost": "20.00",
+  "weight": "6.000"
+ },
+ {
+  "key": "srd_half-plate",
+  "name": "Half plate",
+  "category": "armor",
+  "cost": "750.00",
+  "weight": "40.000"
+ },
+ {
+  "key": "srd_hammer",
+  "name": "Hammer",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_hammer-sledge",
+  "name": "Hammer, sledge",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "10.000"
+ },
+ {
+  "key": "srd_handaxe",
+  "name": "Handaxe",
+  "category": "weapon",
+  "cost": "5.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_healers-kit",
+  "name": "Healer's Kit",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_herbalism-kit",
+  "name": "Herbalism Kit",
+  "category": "tools",
+  "cost": "5.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_hide-armor",
+  "name": "Hide Armor",
+  "category": "armor",
+  "cost": "10.00",
+  "weight": "12.000"
+ },
+ {
+  "key": "srd_holy-water-flask",
+  "name": "Holy Water (flask)",
+  "category": "adventuring-gear",
+  "cost": "25.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_horn",
+  "name": "Horn",
+  "category": "tools",
+  "cost": "3.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_hourglass",
+  "name": "Hourglass",
+  "category": "adventuring-gear",
+  "cost": "25.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_hunting-trap",
+  "name": "Hunting Trap",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "25.000"
+ },
+ {
+  "key": "srd_ink-1-ounce-bottle",
+  "name": "Ink (1 ounce bottle)",
+  "category": "adventuring-gear",
+  "cost": "10.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_ink-pen",
+  "name": "Ink pen",
+  "category": "adventuring-gear",
+  "cost": "0.02",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_iron",
+  "name": "Iron",
+  "category": "trade-good",
+  "cost": "0.10",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_javelin",
+  "name": "Javelin",
+  "category": "weapon",
+  "cost": "0.50",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_jewelers-tools",
+  "name": "Jeweler's Tools",
+  "category": "tools",
+  "cost": "25.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_jug-or-pitcher",
+  "name": "Jug or pitcher",
+  "category": "adventuring-gear",
+  "cost": "0.02",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_keelboat",
+  "name": "Keelboat",
+  "category": "waterborne-vehicle",
+  "cost": "3000.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_ladder-10-foot",
+  "name": "Ladder (10-foot)",
+  "category": "adventuring-gear",
+  "cost": "0.10",
+  "weight": "25.000"
+ },
+ {
+  "key": "srd_lamp",
+  "name": "Lamp",
+  "category": "adventuring-gear",
+  "cost": "0.50",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_lamp-oil-flask",
+  "name": "Lamp oil (flask)",
+  "category": "adventuring-gear",
+  "cost": "0.10",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_lance",
+  "name": "Lance",
+  "category": "weapon",
+  "cost": "10.00",
+  "weight": "6.000"
+ },
+ {
+  "key": "srd_lantern-bullseye",
+  "name": "Lantern, Bullseye",
+  "category": "adventuring-gear",
+  "cost": "10.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_lantern-hooded",
+  "name": "Lantern, Hooded",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_leather-armor",
+  "name": "Leather Armor",
+  "category": "armor",
+  "cost": "10.00",
+  "weight": "10.000"
+ },
+ {
+  "key": "srd_leatherworkers-tools",
+  "name": "Leatherworker's Tools",
+  "category": "tools",
+  "cost": "5.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_light-hammer",
+  "name": "Light hammer",
+  "category": "weapon",
+  "cost": "2.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_linen",
+  "name": "Linen",
+  "category": "trade-good",
+  "cost": "5.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_lock",
+  "name": "Lock",
+  "category": "adventuring-gear",
+  "cost": "10.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_longbow",
+  "name": "Longbow",
+  "category": "weapon",
+  "cost": "50.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_longship",
+  "name": "Longship",
+  "category": "waterborne-vehicle",
+  "cost": "10000.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_longsword",
+  "name": "Longsword",
+  "category": "weapon",
+  "cost": "15.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_lute",
+  "name": "Lute",
+  "category": "tools",
+  "cost": "35.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_lyre",
+  "name": "Lyre",
+  "category": "tools",
+  "cost": "30.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_mace",
+  "name": "Mace",
+  "category": "weapon",
+  "cost": "5.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_magnifying-glass",
+  "name": "Magnifying Glass",
+  "category": "adventuring-gear",
+  "cost": "100.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_malice",
+  "name": "Malice",
+  "category": "poison",
+  "cost": "250.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_manacles",
+  "name": "Manacles",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "6.000"
+ },
+ {
+  "key": "srd_masons-tools",
+  "name": "Mason's Tools",
+  "category": "tools",
+  "cost": "10.00",
+  "weight": "8.000"
+ },
+ {
+  "key": "srd_maul",
+  "name": "Maul",
+  "category": "weapon",
+  "cost": "10.00",
+  "weight": "10.000"
+ },
+ {
+  "key": "srd_mess-kit",
+  "name": "Mess Kit",
+  "category": "adventuring-gear",
+  "cost": "0.20",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_midnight-tears",
+  "name": "Midnight tears",
+  "category": "poison",
+  "cost": "1500.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_mirror-steel",
+  "name": "Mirror, steel",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "0.500"
+ },
+ {
+  "key": "srd_morningstar",
+  "name": "Morningstar",
+  "category": "weapon",
+  "cost": "15.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_navigators-tools",
+  "name": "Navigator's tools",
+  "category": "tools",
+  "cost": "25.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_net",
+  "name": "Net",
+  "category": "weapon",
+  "cost": "1.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_oil-of-taggit",
+  "name": "Oil of taggit",
+  "category": "poison",
+  "cost": "400.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_orb",
+  "name": "Orb",
+  "category": "adventuring-gear",
+  "cost": "20.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_ox",
+  "name": "Ox",
+  "category": "trade-good",
+  "cost": "15.00",
+  "weight": "1500.000"
+ },
+ {
+  "key": "srd_padded-armor",
+  "name": "Padded Armor",
+  "category": "armor",
+  "cost": "5.00",
+  "weight": "8.000"
+ },
+ {
+  "key": "srd_painters-supplies",
+  "name": "Painter's Supplies",
+  "category": "tools",
+  "cost": "10.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_pale-tincture",
+  "name": "Pale tincture",
+  "category": "poison",
+  "cost": "250.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_pan-flute",
+  "name": "Pan flute",
+  "category": "tools",
+  "cost": "12.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_paper-one-sheet",
+  "name": "Paper (one sheet)",
+  "category": "adventuring-gear",
+  "cost": "0.20",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_parchment-one-sheet",
+  "name": "Parchment (one sheet)",
+  "category": "adventuring-gear",
+  "cost": "0.10",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_pepper",
+  "name": "Pepper",
+  "category": "trade-good",
+  "cost": "2.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_perfume-vial",
+  "name": "Perfume (vial)",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_pick-miners",
+  "name": "Pick, miner's",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "10.000"
+ },
+ {
+  "key": "srd_pig",
+  "name": "Pig",
+  "category": "trade-good",
+  "cost": "3.00",
+  "weight": "400.000"
+ },
+ {
+  "key": "srd_pike",
+  "name": "Pike",
+  "category": "weapon",
+  "cost": "5.00",
+  "weight": "18.000"
+ },
+ {
+  "key": "srd_piton",
+  "name": "Piton",
+  "category": "adventuring-gear",
+  "cost": "0.05",
+  "weight": "0.250"
+ },
+ {
+  "key": "srd_plate-armor",
+  "name": "Plate Armor",
+  "category": "armor",
+  "cost": "1500.00",
+  "weight": "65.000"
+ },
+ {
+  "key": "srd_platinum",
+  "name": "Platinum",
+  "category": "trade-good",
+  "cost": "500.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_platinum-piece",
+  "name": "Platinum Piece",
+  "category": "trade-good",
+  "cost": "10.00",
+  "weight": "0.020"
+ },
+ {
+  "key": "srd_playing-card-set",
+  "name": "Playing card set",
+  "category": "tools",
+  "cost": "0.50",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_poison-basic",
+  "name": "Poison, Basic",
+  "category": "poison",
+  "cost": "100.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_poisoners-kit",
+  "name": "Poisoner's kit",
+  "category": "tools",
+  "cost": "50.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_pole-10-foot",
+  "name": "Pole (10-foot)",
+  "category": "adventuring-gear",
+  "cost": "0.05",
+  "weight": "7.000"
+ },
+ {
+  "key": "srd_pot-iron",
+  "name": "Pot, iron",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "10.000"
+ },
+ {
+  "key": "srd_potters-tools",
+  "name": "Potter's tools",
+  "category": "tools",
+  "cost": "10.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_pouch",
+  "name": "Pouch",
+  "category": "adventuring-gear",
+  "cost": "0.50",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_purple-worm-poison",
+  "name": "Purple worm poison",
+  "category": "poison",
+  "cost": "2000.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_quarterstaff",
+  "name": "Quarterstaff",
+  "category": "weapon",
+  "cost": "0.20",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_quiver",
+  "name": "Quiver",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_ram-portable",
+  "name": "Ram, Portable",
+  "category": "adventuring-gear",
+  "cost": "4.00",
+  "weight": "35.000"
+ },
+ {
+  "key": "srd_rapier",
+  "name": "Rapier",
+  "category": "weapon",
+  "cost": "25.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_rations-1-day",
+  "name": "Rations (1 day)",
+  "category": "adventuring-gear",
+  "cost": "0.50",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_reliquary",
+  "name": "Reliquary",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_ring-mail",
+  "name": "Ring mail",
+  "category": "armor",
+  "cost": "30.00",
+  "weight": "40.000"
+ },
+ {
+  "key": "srd_robes",
+  "name": "Robes",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_rod",
+  "name": "Rod",
+  "category": "rod",
+  "cost": "10.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_rope-hempen-50-feet",
+  "name": "Rope, hempen (50 feet)",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "10.000"
+ },
+ {
+  "key": "srd_rope-silk-50-feet",
+  "name": "Rope, silk (50 feet)",
+  "category": "adventuring-gear",
+  "cost": "10.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_rowboat",
+  "name": "Rowboat",
+  "category": "waterborne-vehicle",
+  "cost": "50.00",
+  "weight": "100.000"
+ },
+ {
+  "key": "srd_sack",
+  "name": "Sack",
+  "category": "adventuring-gear",
+  "cost": "0.01",
+  "weight": "0.500"
+ },
+ {
+  "key": "srd_saffron",
+  "name": "Saffron",
+  "category": "trade-good",
+  "cost": "15.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_sailing-ship",
+  "name": "Sailing Ship",
+  "category": "waterborne-vehicle",
+  "cost": "10000.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_salt",
+  "name": "Salt",
+  "category": "trade-good",
+  "cost": "0.05",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_scale-mail",
+  "name": "Scale mail",
+  "category": "armor",
+  "cost": "50.00",
+  "weight": "45.000"
+ },
+ {
+  "key": "srd_scale-merchants",
+  "name": "Scale, Merchant's",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_scimitar",
+  "name": "Scimitar",
+  "category": "weapon",
+  "cost": "25.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_sealing-wax",
+  "name": "Sealing wax",
+  "category": "adventuring-gear",
+  "cost": "0.50",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_serpent-venom",
+  "name": "Serpent venom",
+  "category": "poison",
+  "cost": "200.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_shawm",
+  "name": "Shawm",
+  "category": "tools",
+  "cost": "2.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_sheep",
+  "name": "Sheep",
+  "category": "trade-good",
+  "cost": "2.00",
+  "weight": "75.000"
+ },
+ {
+  "key": "srd_shield",
+  "name": "Shield",
+  "category": "shield",
+  "cost": "10.00",
+  "weight": "6.000"
+ },
+ {
+  "key": "srd_shortbow",
+  "name": "Shortbow",
+  "category": "weapon",
+  "cost": "25.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_shortsword",
+  "name": "Shortsword",
+  "category": "weapon",
+  "cost": "10.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_shovel",
+  "name": "Shovel",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_sickle",
+  "name": "Sickle",
+  "category": "weapon",
+  "cost": "1.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_signal-whistle",
+  "name": "Signal whistle",
+  "category": "adventuring-gear",
+  "cost": "0.05",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_signet-ring",
+  "name": "Signet Ring",
+  "category": "ring",
+  "cost": "5.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_silk",
+  "name": "Silk",
+  "category": "trade-good",
+  "cost": "10.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_silver",
+  "name": "Silver",
+  "category": "trade-good",
+  "cost": "5.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_silver-piece",
+  "name": "Silver Piece",
+  "category": "trade-good",
+  "cost": "0.10",
+  "weight": "0.020"
+ },
+ {
+  "key": "srd_sled",
+  "name": "Sled",
+  "category": "land-vehicle",
+  "cost": "20.00",
+  "weight": "300.000"
+ },
+ {
+  "key": "srd_sling",
+  "name": "Sling",
+  "category": "weapon",
+  "cost": "0.10",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_sling-bullets",
+  "name": "Sling bullets",
+  "category": "ammunition",
+  "cost": "0.01",
+  "weight": "0.075"
+ },
+ {
+  "key": "srd_smiths-tools",
+  "name": "Smith's tools",
+  "category": "tools",
+  "cost": "20.00",
+  "weight": "8.000"
+ },
+ {
+  "key": "srd_soap",
+  "name": "Soap",
+  "category": "adventuring-gear",
+  "cost": "0.02",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_spear",
+  "name": "Spear",
+  "category": "weapon",
+  "cost": "1.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_spellbook",
+  "name": "Spellbook",
+  "category": "adventuring-gear",
+  "cost": "50.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_spike-iron",
+  "name": "Spike, iron",
+  "category": "adventuring-gear",
+  "cost": "0.10",
+  "weight": "0.500"
+ },
+ {
+  "key": "srd_splint-armor",
+  "name": "Splint Armor",
+  "category": "armor",
+  "cost": "200.00",
+  "weight": "60.000"
+ },
+ {
+  "key": "srd_sprig-of-mistletoe",
+  "name": "Sprig of mistletoe",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_spyglass",
+  "name": "Spyglass",
+  "category": "adventuring-gear",
+  "cost": "1000.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_staff",
+  "name": "Staff",
+  "category": "staff",
+  "cost": "5.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_studded-leather-armor",
+  "name": "Studded Leather Armor",
+  "category": "armor",
+  "cost": "45.00",
+  "weight": "13.000"
+ },
+ {
+  "key": "srd_tent",
+  "name": "Tent",
+  "category": "adventuring-gear",
+  "cost": "2.00",
+  "weight": "20.000"
+ },
+ {
+  "key": "srd_thieves-tools",
+  "name": "Thieves' tools",
+  "category": "tools",
+  "cost": "25.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_tinderbox",
+  "name": "Tinderbox",
+  "category": "adventuring-gear",
+  "cost": "0.50",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_tinkers-tools",
+  "name": "Tinker's tools",
+  "category": "tools",
+  "cost": "50.00",
+  "weight": "10.000"
+ },
+ {
+  "key": "srd_torch",
+  "name": "Torch",
+  "category": "adventuring-gear",
+  "cost": "0.01",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_torpor",
+  "name": "Torpor",
+  "category": "poison",
+  "cost": "600.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_totem",
+  "name": "Totem",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_trident",
+  "name": "Trident",
+  "category": "weapon",
+  "cost": "5.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_truth-serum",
+  "name": "Truth serum",
+  "category": "poison",
+  "cost": "150.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_vial",
+  "name": "Vial",
+  "category": "adventuring-gear",
+  "cost": "1.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_viol",
+  "name": "Viol",
+  "category": "tools",
+  "cost": "30.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_wagon",
+  "name": "Wagon",
+  "category": "land-vehicle",
+  "cost": "35.00",
+  "weight": "400.000"
+ },
+ {
+  "key": "srd_wand",
+  "name": "Wand",
+  "category": "wand",
+  "cost": "10.00",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_war-pick",
+  "name": "War pick",
+  "category": "weapon",
+  "cost": "5.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_warhammer",
+  "name": "Warhammer",
+  "category": "weapon",
+  "cost": "15.00",
+  "weight": "2.000"
+ },
+ {
+  "key": "srd_warship",
+  "name": "Warship",
+  "category": "waterborne-vehicle",
+  "cost": "25000.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_waterskin",
+  "name": "Waterskin",
+  "category": "adventuring-gear",
+  "cost": "0.20",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_weavers-tools",
+  "name": "Weaver's tools",
+  "category": "tools",
+  "cost": "1.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_wheat",
+  "name": "Wheat",
+  "category": "trade-good",
+  "cost": "0.01",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_whetstone",
+  "name": "Whetstone",
+  "category": "adventuring-gear",
+  "cost": "0.01",
+  "weight": "1.000"
+ },
+ {
+  "key": "srd_whip",
+  "name": "Whip",
+  "category": "weapon",
+  "cost": "2.00",
+  "weight": "3.000"
+ },
+ {
+  "key": "srd_woodcarvers-tools",
+  "name": "Woodcarver's tools",
+  "category": "tools",
+  "cost": "1.00",
+  "weight": "5.000"
+ },
+ {
+  "key": "srd_wooden-staff",
+  "name": "Wooden staff",
+  "category": "adventuring-gear",
+  "cost": "5.00",
+  "weight": "4.000"
+ },
+ {
+  "key": "srd_wyvern-poison",
+  "name": "Wyvern poison",
+  "category": "poison",
+  "cost": "1200.00",
+  "weight": "0.000"
+ },
+ {
+  "key": "srd_yew-wand",
+  "name": "Yew wand",
+  "category": "wand",
+  "cost": "10.00",
+  "weight": "1.000"
  }
 ]
