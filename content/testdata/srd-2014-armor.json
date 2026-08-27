@@ -1,55 +1,29 @@
 [
  {
-  "slug": "padded",
-  "name": "Padded",
-  "category": "Light Armor",
-  "base_ac": 11,
-  "plus_dex_mod": true,
-  "plus_max": 0,
-  "plus_flat_mod": 0,
-  "strength_requirement": null,
-  "stealth_disadvantage": true,
-  "cost": "5 gp",
-  "weight": "8 lb."
- },
- {
-  "slug": "leather",
-  "name": "Leather",
-  "category": "Light Armor",
-  "base_ac": 11,
-  "plus_dex_mod": true,
-  "plus_max": 0,
-  "plus_flat_mod": 0,
-  "strength_requirement": null,
-  "stealth_disadvantage": false,
-  "cost": "10 gp",
-  "weight": "10 lb."
- },
- {
-  "slug": "studded-leather",
-  "name": "Studded Leather",
-  "category": "Light Armor",
-  "base_ac": 12,
-  "plus_dex_mod": true,
-  "plus_max": 0,
-  "plus_flat_mod": 0,
-  "strength_requirement": null,
-  "stealth_disadvantage": false,
-  "cost": "45 gp",
-  "weight": "13 lb."
- },
- {
-  "slug": "hide",
-  "name": "Hide",
+  "slug": "breastplate",
+  "name": "Breastplate",
   "category": "Medium Armor",
-  "base_ac": 12,
+  "base_ac": 14,
   "plus_dex_mod": true,
   "plus_max": 2,
   "plus_flat_mod": 0,
   "strength_requirement": null,
   "stealth_disadvantage": false,
-  "cost": "10 gp",
-  "weight": "12 lb."
+  "cost": "400 gp",
+  "weight": "20 lb."
+ },
+ {
+  "slug": "chain-mail",
+  "name": "Chain mail",
+  "category": "Heavy Armor",
+  "base_ac": 16,
+  "plus_dex_mod": false,
+  "plus_max": 0,
+  "plus_flat_mod": 0,
+  "strength_requirement": 13,
+  "stealth_disadvantage": true,
+  "cost": "75 gp",
+  "weight": "55 lb."
  },
  {
   "slug": "chain-shirt",
@@ -62,32 +36,6 @@
   "strength_requirement": null,
   "stealth_disadvantage": false,
   "cost": "50 gp",
-  "weight": "20 lb."
- },
- {
-  "slug": "scale-mail",
-  "name": "Scale mail",
-  "category": "Medium Armor",
-  "base_ac": 14,
-  "plus_dex_mod": true,
-  "plus_max": 2,
-  "plus_flat_mod": 0,
-  "strength_requirement": null,
-  "stealth_disadvantage": true,
-  "cost": "50 gp",
-  "weight": "45 lb."
- },
- {
-  "slug": "breastplate",
-  "name": "Breastplate",
-  "category": "Medium Armor",
-  "base_ac": 14,
-  "plus_dex_mod": true,
-  "plus_max": 2,
-  "plus_flat_mod": 0,
-  "strength_requirement": null,
-  "stealth_disadvantage": false,
-  "cost": "400 gp",
   "weight": "20 lb."
  },
  {
@@ -104,43 +52,43 @@
   "weight": "40 lb."
  },
  {
-  "slug": "ring-mail",
-  "name": "Ring mail",
-  "category": "Heavy Armor",
-  "base_ac": 14,
-  "plus_dex_mod": false,
+  "slug": "hide",
+  "name": "Hide",
+  "category": "Medium Armor",
+  "base_ac": 12,
+  "plus_dex_mod": true,
+  "plus_max": 2,
+  "plus_flat_mod": 0,
+  "strength_requirement": null,
+  "stealth_disadvantage": false,
+  "cost": "10 gp",
+  "weight": "12 lb."
+ },
+ {
+  "slug": "leather",
+  "name": "Leather",
+  "category": "Light Armor",
+  "base_ac": 11,
+  "plus_dex_mod": true,
+  "plus_max": 0,
+  "plus_flat_mod": 0,
+  "strength_requirement": null,
+  "stealth_disadvantage": false,
+  "cost": "10 gp",
+  "weight": "10 lb."
+ },
+ {
+  "slug": "padded",
+  "name": "Padded",
+  "category": "Light Armor",
+  "base_ac": 11,
+  "plus_dex_mod": true,
   "plus_max": 0,
   "plus_flat_mod": 0,
   "strength_requirement": null,
   "stealth_disadvantage": true,
-  "cost": "30 gp",
-  "weight": "40 lb."
- },
- {
-  "slug": "chain-mail",
-  "name": "Chain mail",
-  "category": "Heavy Armor",
-  "base_ac": 16,
-  "plus_dex_mod": false,
-  "plus_max": 0,
-  "plus_flat_mod": 0,
-  "strength_requirement": 13,
-  "stealth_disadvantage": true,
-  "cost": "75 gp",
-  "weight": "55 lb."
- },
- {
-  "slug": "splint",
-  "name": "Splint",
-  "category": "Heavy Armor",
-  "base_ac": 17,
-  "plus_dex_mod": false,
-  "plus_max": 0,
-  "plus_flat_mod": 0,
-  "strength_requirement": 15,
-  "stealth_disadvantage": true,
-  "cost": "200 gp",
-  "weight": "60 lb."
+  "cost": "5 gp",
+  "weight": "8 lb."
  },
  {
   "slug": "plate",
@@ -156,6 +104,32 @@
   "weight": "65 lb."
  },
  {
+  "slug": "ring-mail",
+  "name": "Ring mail",
+  "category": "Heavy Armor",
+  "base_ac": 14,
+  "plus_dex_mod": false,
+  "plus_max": 0,
+  "plus_flat_mod": 0,
+  "strength_requirement": null,
+  "stealth_disadvantage": true,
+  "cost": "30 gp",
+  "weight": "40 lb."
+ },
+ {
+  "slug": "scale-mail",
+  "name": "Scale mail",
+  "category": "Medium Armor",
+  "base_ac": 14,
+  "plus_dex_mod": true,
+  "plus_max": 2,
+  "plus_flat_mod": 0,
+  "strength_requirement": null,
+  "stealth_disadvantage": true,
+  "cost": "50 gp",
+  "weight": "45 lb."
+ },
+ {
   "slug": "shield",
   "name": "Shield",
   "category": "Shield",
@@ -167,5 +141,31 @@
   "stealth_disadvantage": false,
   "cost": "10 gp",
   "weight": "6 lb."
+ },
+ {
+  "slug": "splint",
+  "name": "Splint",
+  "category": "Heavy Armor",
+  "base_ac": 17,
+  "plus_dex_mod": false,
+  "plus_max": 0,
+  "plus_flat_mod": 0,
+  "strength_requirement": 15,
+  "stealth_disadvantage": true,
+  "cost": "200 gp",
+  "weight": "60 lb."
+ },
+ {
+  "slug": "studded-leather",
+  "name": "Studded Leather",
+  "category": "Light Armor",
+  "base_ac": 12,
+  "plus_dex_mod": true,
+  "plus_max": 0,
+  "plus_flat_mod": 0,
+  "strength_requirement": null,
+  "stealth_disadvantage": false,
+  "cost": "45 gp",
+  "weight": "13 lb."
  }
 ]
