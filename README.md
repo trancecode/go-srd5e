@@ -32,7 +32,7 @@ damage/   typed Damage, Roll, Mitigation, ApplyMitigation, ApplyToHp, Apply
 effect/   declarative effects (damage, healing, condition, movement, modifier), Triggered
 turn/     initiative event timeline, action-economy and movement bookkeeping
 resource/ SpellSlotPool, HitDicePool, Resource, ResourceSet, Restorable
-content/  Class, Race, Spell, Item, Creature, Registry (layer 2, optional)
+content/  Class, Race, Spell, Item, Creature, Registry; StandardItems, RegisterStandardItems, Weapons, Armor, Gear (layer 2, optional)
 ```
 
 ## Design and plans

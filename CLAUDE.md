@@ -77,7 +77,7 @@ This section contains guidelines specific to this repository that extend or over
 * **Source of truth for the API:** `docs/superpowers/specs/2026-06-18-go-srd5e-module-design.md`. Read it before changing any package's shape; it carries the binding design principles. Update the spec when the design changes.
 * **Implementation:** one plan per package under `docs/superpowers/plans/`, executed in dependency order with TDD (a fresh subagent per task plus review is the established method). Module path `github.com/trancecode/go-srd5e`; the Go version is declared in `go.mod`.
 
-**Build order and status (dependency DAG):** `core` (done) → `dice` (done) → `check` + `combat` (done) → `damage` (done) → `effect` (done) → `turn` (done) → `resource` (done) → `content` (done). All 8 packages implemented, reviewed, and green; tagged `v1.0.0`. pkg.go.dev publishes the godoc off the tag.
+**Build order and status (dependency DAG):** `core` (done) → `dice` (done) → `check` + `combat` (done) → `damage` (done) → `effect` (done) → `turn` (done) → `resource` (done) → `content` (done). All 8 packages implemented, reviewed, and green. `content` now also carries the SRD 5.1 equipment as data, not just shapes: `Weapons`, `Armor`, `Gear`, `StandardItems`, and `RegisterStandardItems`, pinned to the SRD text by fixtures under `content/testdata/`. Tagged `v1.2.0`. pkg.go.dev publishes the godoc off the tag.
 
 **Binding invariants (beyond the style guide):**
 
