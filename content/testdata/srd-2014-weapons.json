@@ -1,732 +1,470 @@
 [
  {
-  "key": "srd_battleaxe",
+  "slug": "battleaxe",
   "name": "Battleaxe",
-  "cost": "10.00",
-  "weight": "4.000",
+  "category": "Martial Melee Weapons",
+  "cost": "10 gp",
+  "weight": "4 lb.",
   "damage_dice": "1d8",
   "damage_type": "slashing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Versatile",
-    "detail": "1d10"
-   }
+   "versatile (1d10)"
   ]
  },
  {
-  "key": "srd_blowgun",
+  "slug": "blowgun",
   "name": "Blowgun",
-  "cost": "10.00",
-  "weight": "1.000",
+  "category": "Martial Ranged Weapons",
+  "cost": "10 gp",
+  "weight": "1 lb.",
   "damage_dice": "1",
   "damage_type": "piercing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 25,
-  "long_range": 100,
   "properties": [
-   {
-    "name": "Ammunition",
-    "detail": "range 25/100"
-   },
-   {
-    "name": "Loading",
-    "detail": null
-   }
+   "ammunition (range 25/100)",
+   "loading"
   ]
  },
  {
-  "key": "srd_club",
+  "slug": "club",
   "name": "Club",
-  "cost": "0.10",
-  "weight": "2.000",
+  "category": "Simple Melee Weapons",
+  "cost": "1 sp",
+  "weight": "2 lb.",
   "damage_dice": "1d4",
   "damage_type": "bludgeoning",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Light",
-    "detail": null
-   }
+   "light"
   ]
  },
  {
-  "key": "srd_crossbow-hand",
+  "slug": "crossbow-hand",
   "name": "Crossbow, hand",
-  "cost": "75.00",
-  "weight": "3.000",
+  "category": "Martial Ranged Weapons",
+  "cost": "75 gp",
+  "weight": "3 lb.",
   "damage_dice": "1d6",
   "damage_type": "piercing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 30,
-  "long_range": 120,
   "properties": [
-   {
-    "name": "Ammunition",
-    "detail": "range 30/120"
-   },
-   {
-    "name": "Light",
-    "detail": null
-   },
-   {
-    "name": "Loading",
-    "detail": null
-   }
+   "ammunition (range 30/120)",
+   "light",
+   "loading"
   ]
  },
  {
-  "key": "srd_crossbow-heavy",
+  "slug": "crossbow-heavy",
   "name": "Crossbow, heavy",
-  "cost": "50.00",
-  "weight": "18.000",
+  "category": "Martial Ranged Weapons",
+  "cost": "50 gp",
+  "weight": "18 lb.",
   "damage_dice": "1d10",
   "damage_type": "piercing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 100,
-  "long_range": 400,
   "properties": [
-   {
-    "name": "Loading",
-    "detail": null
-   },
-   {
-    "name": "Two-Handed",
-    "detail": null
-   }
+   "ammunition (range 100/400)",
+   "heavy",
+   "loading",
+   "two-handed"
   ]
  },
  {
-  "key": "srd_crossbow-light",
+  "slug": "crossbow-light",
   "name": "Crossbow, light",
-  "cost": "25.00",
-  "weight": "5.000",
+  "category": "Simple Ranged Weapons",
+  "cost": "25 gp",
+  "weight": "5 lb.",
   "damage_dice": "1d8",
   "damage_type": "piercing",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 80,
-  "long_range": 320,
   "properties": [
-   {
-    "name": "Ammunition",
-    "detail": "range 80/320"
-   },
-   {
-    "name": "Loading",
-    "detail": null
-   }
+   "ammunition (range 80/320)",
+   "loading",
+   "two-handed"
   ]
  },
  {
-  "key": "srd_dagger",
+  "slug": "dagger",
   "name": "Dagger",
-  "cost": "2.00",
-  "weight": "1.000",
+  "category": "Simple Melee Weapons",
+  "cost": "2 gp",
+  "weight": "1 lb.",
   "damage_dice": "1d4",
   "damage_type": "piercing",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 20,
-  "long_range": 60,
   "properties": [
-   {
-    "name": "Finesse",
-    "detail": null
-   },
-   {
-    "name": "Light",
-    "detail": null
-   },
-   {
-    "name": "Thrown",
-    "detail": "range 20/60"
-   }
+   "finesse",
+   "light",
+   "thrown (range 20/60)"
   ]
  },
  {
-  "key": "srd_dart",
+  "slug": "dart",
   "name": "Dart",
-  "cost": "0.05",
-  "weight": "0.250",
+  "category": "Simple Ranged Weapons",
+  "cost": "5 cp",
+  "weight": "1/4 lb.",
   "damage_dice": "1d4",
   "damage_type": "piercing",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 20,
-  "long_range": 60,
   "properties": [
-   {
-    "name": "Finesse",
-    "detail": null
-   },
-   {
-    "name": "Thrown",
-    "detail": "range 20/60"
-   }
+   "finesse",
+   "thrown (range 20/60)"
   ]
  },
  {
-  "key": "srd_flail",
+  "slug": "flail",
   "name": "Flail",
-  "cost": "10.00",
-  "weight": "2.000",
+  "category": "Martial Melee Weapons",
+  "cost": "10 gp",
+  "weight": "2 lb.",
   "damage_dice": "1d8",
   "damage_type": "bludgeoning",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": []
  },
  {
-  "key": "srd_glaive",
+  "slug": "glaive",
   "name": "Glaive",
-  "cost": "20.00",
-  "weight": "6.000",
+  "category": "Martial Melee Weapons",
+  "cost": "20 gp",
+  "weight": "6 lb.",
   "damage_dice": "1d10",
   "damage_type": "slashing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Reach",
-    "detail": null
-   },
-   {
-    "name": "Two-Handed",
-    "detail": null
-   }
+   "heavy",
+   "reach",
+   "two-handed"
   ]
  },
  {
-  "key": "srd_greataxe",
+  "slug": "greataxe",
   "name": "Greataxe",
-  "cost": "30.00",
-  "weight": "7.000",
+  "category": "Martial Melee Weapons",
+  "cost": "30 gp",
+  "weight": "7 lb.",
   "damage_dice": "1d12",
   "damage_type": "slashing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Two-Handed",
-    "detail": null
-   }
+   "heavy",
+   "two-handed"
   ]
  },
  {
-  "key": "srd_greatclub",
+  "slug": "greatclub",
   "name": "Greatclub",
-  "cost": "0.20",
-  "weight": "10.000",
+  "category": "Simple Melee Weapons",
+  "cost": "2 sp",
+  "weight": "10 lb.",
   "damage_dice": "1d8",
   "damage_type": "bludgeoning",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Two-Handed",
-    "detail": null
-   }
+   "two-handed"
   ]
  },
  {
-  "key": "srd_greatsword",
+  "slug": "greatsword",
   "name": "Greatsword",
-  "cost": "50.00",
-  "weight": "0.000",
+  "category": "Martial Melee Weapons",
+  "cost": "50 gp",
+  "weight": "6 lb.",
   "damage_dice": "2d6",
   "damage_type": "slashing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Two-Handed",
-    "detail": null
-   }
+   "heavy",
+   "two-handed"
   ]
  },
  {
-  "key": "srd_halberd",
+  "slug": "halberd",
   "name": "Halberd",
-  "cost": "20.00",
-  "weight": "6.000",
+  "category": "Martial Melee Weapons",
+  "cost": "20 gp",
+  "weight": "6 lb.",
   "damage_dice": "1d10",
   "damage_type": "slashing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Reach",
-    "detail": null
-   },
-   {
-    "name": "Two-Handed",
-    "detail": null
-   }
+   "heavy",
+   "reach",
+   "two-handed"
   ]
  },
  {
-  "key": "srd_handaxe",
+  "slug": "handaxe",
   "name": "Handaxe",
-  "cost": "5.00",
-  "weight": "2.000",
+  "category": "Simple Melee Weapons",
+  "cost": "5 gp",
+  "weight": "2 lb.",
   "damage_dice": "1d6",
   "damage_type": "slashing",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 20,
-  "long_range": 60,
   "properties": [
-   {
-    "name": "Light",
-    "detail": null
-   }
+   "light",
+   "thrown (range 20/60)"
   ]
  },
  {
-  "key": "srd_javelin",
+  "slug": "javelin",
   "name": "Javelin",
-  "cost": "0.50",
-  "weight": "2.000",
+  "category": "Simple Melee Weapons",
+  "cost": "5 sp",
+  "weight": "2 lb.",
   "damage_dice": "1d6",
   "damage_type": "piercing",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 30,
-  "long_range": 120,
   "properties": [
-   {
-    "name": "Thrown",
-    "detail": "range 30/120"
-   }
+   "thrown (range 30/120)"
   ]
  },
  {
-  "key": "srd_lance",
+  "slug": "lance",
   "name": "Lance",
-  "cost": "10.00",
-  "weight": "6.000",
+  "category": "Martial Melee Weapons",
+  "cost": "10 gp",
+  "weight": "6 lb.",
   "damage_dice": "1d12",
   "damage_type": "piercing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Special (Lance)",
-    "detail": null
-   },
-   {
-    "name": "Reach",
-    "detail": null
-   }
+   "reach",
+   "special"
   ]
  },
  {
-  "key": "srd_light-hammer",
+  "slug": "light-hammer",
   "name": "Light hammer",
-  "cost": "2.00",
-  "weight": "2.000",
+  "category": "Simple Melee Weapons",
+  "cost": "2 gp",
+  "weight": "2 lb.",
   "damage_dice": "1d4",
   "damage_type": "bludgeoning",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 20,
-  "long_range": 60,
   "properties": [
-   {
-    "name": "Light",
-    "detail": null
-   },
-   {
-    "name": "Thrown",
-    "detail": "range 20/60"
-   }
+   "light",
+   "thrown (range 20/60)"
   ]
  },
  {
-  "key": "srd_longbow",
+  "slug": "longbow",
   "name": "Longbow",
-  "cost": "50.00",
-  "weight": "2.000",
+  "category": "Martial Ranged Weapons",
+  "cost": "50 gp",
+  "weight": "2 lb.",
   "damage_dice": "1d8",
   "damage_type": "piercing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 150,
-  "long_range": 600,
   "properties": [
-   {
-    "name": "Ammunition",
-    "detail": "range 150/600"
-   },
-   {
-    "name": "Two-Handed",
-    "detail": null
-   }
+   "ammunition (range 150/600)",
+   "heavy",
+   "two-handed"
   ]
  },
  {
-  "key": "srd_longsword",
+  "slug": "longsword",
   "name": "Longsword",
-  "cost": "15.00",
-  "weight": "3.000",
+  "category": "Martial Melee Weapons",
+  "cost": "15 gp",
+  "weight": "3 lb.",
   "damage_dice": "1d8",
   "damage_type": "slashing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Versatile",
-    "detail": "1d10"
-   }
+   "versatile (1d10)"
   ]
  },
  {
-  "key": "srd_mace",
+  "slug": "mace",
   "name": "Mace",
-  "cost": "5.00",
-  "weight": "4.000",
+  "category": "Simple Melee Weapons",
+  "cost": "5 gp",
+  "weight": "4 lb.",
   "damage_dice": "1d6",
   "damage_type": "bludgeoning",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 0,
-  "long_range": 0,
   "properties": []
  },
  {
-  "key": "srd_maul",
+  "slug": "maul",
   "name": "Maul",
-  "cost": "10.00",
-  "weight": "10.000",
+  "category": "Martial Melee Weapons",
+  "cost": "10 gp",
+  "weight": "10 lb.",
   "damage_dice": "2d6",
   "damage_type": "bludgeoning",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Two-Handed",
-    "detail": null
-   }
+   "heavy",
+   "two-handed"
   ]
  },
  {
-  "key": "srd_morningstar",
+  "slug": "morningstar",
   "name": "Morningstar",
-  "cost": "15.00",
-  "weight": "4.000",
+  "category": "Martial Melee Weapons",
+  "cost": "15 gp",
+  "weight": "4 lb.",
   "damage_dice": "1d8",
   "damage_type": "piercing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": []
  },
  {
-  "key": "srd_net",
+  "slug": "net",
   "name": "Net",
-  "cost": "1.00",
-  "weight": "3.000",
+  "category": "Martial Ranged Weapons",
+  "cost": "1 gp",
+  "weight": "3 lb.",
   "damage_dice": "0",
-  "damage_type": "bludgeoning",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 5,
-  "long_range": 15,
+  "damage_type": "",
   "properties": [
-   {
-    "name": "Special (Net)",
-    "detail": null
-   },
-   {
-    "name": "Thrown",
-    "detail": "range 5/15"
-   }
+   "special",
+   "thrown (range 5/15)"
   ]
  },
  {
-  "key": "srd_pike",
+  "slug": "pike",
   "name": "Pike",
-  "cost": "5.00",
-  "weight": "18.000",
+  "category": "Martial Melee Weapons",
+  "cost": "5 gp",
+  "weight": "18 lb.",
   "damage_dice": "1d10",
   "damage_type": "piercing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Reach",
-    "detail": null
-   },
-   {
-    "name": "Two-Handed",
-    "detail": null
-   }
+   "heavy",
+   "reach",
+   "two-handed"
   ]
  },
  {
-  "key": "srd_quarterstaff",
+  "slug": "quarterstaff",
   "name": "Quarterstaff",
-  "cost": "0.20",
-  "weight": "4.000",
+  "category": "Simple Melee Weapons",
+  "cost": "2 sp",
+  "weight": "4 lb.",
   "damage_dice": "1d6",
   "damage_type": "bludgeoning",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Versatile",
-    "detail": "1d8"
-   }
+   "versatile (1d8)"
   ]
  },
  {
-  "key": "srd_rapier",
+  "slug": "rapier",
   "name": "Rapier",
-  "cost": "25.00",
-  "weight": "2.000",
+  "category": "Martial Melee Weapons",
+  "cost": "25 gp",
+  "weight": "2 lb.",
   "damage_dice": "1d8",
   "damage_type": "piercing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Finesse",
-    "detail": null
-   }
+   "finesse"
   ]
  },
  {
-  "key": "srd_scimitar",
+  "slug": "scimitar",
   "name": "Scimitar",
-  "cost": "25.00",
-  "weight": "3.000",
+  "category": "Martial Melee Weapons",
+  "cost": "25 gp",
+  "weight": "3 lb.",
   "damage_dice": "1d6",
   "damage_type": "slashing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Finesse",
-    "detail": null
-   },
-   {
-    "name": "Light",
-    "detail": null
-   }
+   "finesse",
+   "light"
   ]
  },
  {
-  "key": "srd_shortbow",
+  "slug": "shortbow",
   "name": "Shortbow",
-  "cost": "25.00",
-  "weight": "2.000",
+  "category": "Simple Ranged Weapons",
+  "cost": "25 gp",
+  "weight": "2 lb.",
   "damage_dice": "1d6",
   "damage_type": "piercing",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 80,
-  "long_range": 320,
   "properties": [
-   {
-    "name": "Ammunition",
-    "detail": "range 80/320"
-   },
-   {
-    "name": "Two-Handed",
-    "detail": null
-   }
+   "ammunition (range 80/320)",
+   "two-handed"
   ]
  },
  {
-  "key": "srd_shortsword",
+  "slug": "shortsword",
   "name": "Shortsword",
-  "cost": "10.00",
-  "weight": "2.000",
+  "category": "Martial Melee Weapons",
+  "cost": "10 gp",
+  "weight": "2 lb.",
   "damage_dice": "1d6",
-  "damage_type": "slashing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
+  "damage_type": "piercing",
   "properties": [
-   {
-    "name": "Finesse",
-    "detail": null
-   },
-   {
-    "name": "Light",
-    "detail": null
-   }
+   "finesse",
+   "light"
   ]
  },
  {
-  "key": "srd_sickle",
+  "slug": "sickle",
   "name": "Sickle",
-  "cost": "1.00",
-  "weight": "2.000",
+  "category": "Simple Melee Weapons",
+  "cost": "1 gp",
+  "weight": "2 lb.",
   "damage_dice": "1d4",
   "damage_type": "slashing",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Light",
-    "detail": null
-   }
+   "light"
   ]
  },
  {
-  "key": "srd_sling",
+  "slug": "sling",
   "name": "Sling",
-  "cost": "0.10",
-  "weight": "0.000",
+  "category": "Simple Ranged Weapons",
+  "cost": "1 sp",
+  "weight": "0 lb.",
   "damage_dice": "1d4",
   "damage_type": "bludgeoning",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 30,
-  "long_range": 120,
   "properties": [
-   {
-    "name": "Ammunition",
-    "detail": "range 80/320"
-   }
+   "ammunition (range 30/120)"
   ]
  },
  {
-  "key": "srd_spear",
+  "slug": "spear",
   "name": "Spear",
-  "cost": "1.00",
-  "weight": "3.000",
+  "category": "Simple Melee Weapons",
+  "cost": "1 gp",
+  "weight": "3 lb.",
   "damage_dice": "1d6",
   "damage_type": "piercing",
-  "is_simple": true,
-  "is_martial": false,
-  "range": 20,
-  "long_range": 60,
   "properties": [
-   {
-    "name": "Thrown",
-    "detail": "range 20/60"
-   },
-   {
-    "name": "Versatile",
-    "detail": "1d8"
-   }
+   "thrown (range 20/60)",
+   "versatile (1d8)"
   ]
  },
  {
-  "key": "srd_trident",
+  "slug": "trident",
   "name": "Trident",
-  "cost": "5.00",
-  "weight": "4.000",
+  "category": "Martial Melee Weapons",
+  "cost": "5 gp",
+  "weight": "4 lb.",
   "damage_dice": "1d6",
   "damage_type": "piercing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 20,
-  "long_range": 60,
   "properties": [
-   {
-    "name": "Two-Handed",
-    "detail": null
-   },
-   {
-    "name": "Thrown",
-    "detail": "range 20/60"
-   },
-   {
-    "name": "Versatile",
-    "detail": "1d8"
-   }
+   "thrown (range 20/60)",
+   "versatile (1d8)"
   ]
  },
  {
-  "key": "srd_war-pick",
+  "slug": "war-pick",
   "name": "War pick",
-  "cost": "5.00",
-  "weight": "2.000",
+  "category": "Martial Melee Weapons",
+  "cost": "5 gp",
+  "weight": "2 lb.",
   "damage_dice": "1d8",
   "damage_type": "piercing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": []
  },
  {
-  "key": "srd_warhammer",
+  "slug": "warhammer",
   "name": "Warhammer",
-  "cost": "15.00",
-  "weight": "2.000",
+  "category": "Martial Melee Weapons",
+  "cost": "15 gp",
+  "weight": "2 lb.",
   "damage_dice": "1d8",
   "damage_type": "bludgeoning",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Versatile",
-    "detail": "1d10"
-   }
+   "versatile (1d10)"
   ]
  },
  {
-  "key": "srd_whip",
+  "slug": "whip",
   "name": "Whip",
-  "cost": "2.00",
-  "weight": "3.000",
+  "category": "Martial Melee Weapons",
+  "cost": "2 gp",
+  "weight": "3 lb.",
   "damage_dice": "1d4",
   "damage_type": "slashing",
-  "is_simple": false,
-  "is_martial": true,
-  "range": 0,
-  "long_range": 0,
   "properties": [
-   {
-    "name": "Reach",
-    "detail": null
-   }
+   "finesse",
+   "reach"
   ]
  }
 ]
