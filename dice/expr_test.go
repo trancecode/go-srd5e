@@ -30,6 +30,18 @@ func TestParse(t *testing.T) {
 	}
 }
 
+func TestMustParse(t *testing.T) {
+	if got, want := MustParse("2d6+3"), (Expr{2, 6, 3}); got != want {
+		t.Errorf("MustParse(%q) = %+v, want %+v", "2d6+3", got, want)
+	}
+	defer func() {
+		if recover() == nil {
+			t.Error("MustParse(bad) did not panic")
+		}
+	}()
+	MustParse("not dice")
+}
+
 func TestBounds(t *testing.T) {
 	e := Expr{2, 6, 3} // 2d6+3
 	if e.Min() != 5 {

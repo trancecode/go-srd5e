@@ -36,6 +36,17 @@ func Parse(s string) (Expr, error) {
 	return Expr{Count: count, Sides: sides, Modifier: mod}, nil
 }
 
+// MustParse is Parse for literal dice expressions baked into source, such as
+// a weapon's damage in a content table: it panics on a bad expression, which
+// is a programming error, not a runtime condition to handle.
+func MustParse(s string) Expr {
+	e, err := Parse(s)
+	if err != nil {
+		panic(err)
+	}
+	return e
+}
+
 // Min is the lowest possible total (every die shows 1, plus the modifier).
 func (e Expr) Min() int { return e.Count + e.Modifier }
 
