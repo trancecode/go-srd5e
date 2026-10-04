@@ -12,6 +12,13 @@ type DamagePart struct {
 	Amount  int
 	Type    core.DamageType
 	Magical bool
+
+	// Dice lists the die faces rolled for this part, in roll order, including
+	// the doubled dice of a critical hit, so a game can narrate the roll. It is
+	// empty (nil, or zero-length for a rolled part with no dice) when no die was
+	// rolled, so test len(Dice) rather than nil. Amount remains the part's total,
+	// so mitigation and hit-point application ignore Dice.
+	Dice []int
 }
 
 // Damage is the rolled, typed result of an attack or effect.
@@ -32,9 +39,10 @@ type Spec struct {
 }
 
 // Roll keys off the attack outcome: a miss yields zero damage, a critical
-// doubles the dice per part. bonus is the attacker's flat modifier; it is added
-// once to the primary part (so it carries that part's type for resistance and is
-// not doubled on a crit), flooring that part at zero.
+// doubles the dice per part. Each part records the faces it rolled in Dice.
+// bonus is the attacker's flat modifier; it is added once to the primary part
+// (so it carries that part's type for resistance and is not doubled on a crit),
+// flooring that part at zero.
 func Roll(spec Spec, bonus core.Modifier, outcome combat.AttackOutcome, r dice.Roller) Damage {
 	if outcome == combat.AttackMiss {
 		return Damage{}
@@ -55,7 +63,7 @@ func Roll(spec Spec, bonus core.Modifier, outcome combat.AttackOutcome, r dice.R
 				amount = 0
 			}
 		}
-		parts[i] = DamagePart{Amount: amount, Type: ps.Type, Magical: ps.Magical}
+		parts[i] = DamagePart{Amount: amount, Type: ps.Type, Magical: ps.Magical, Dice: res.Dice}
 	}
 	return Damage{Parts: parts}
 }

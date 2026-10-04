@@ -516,7 +516,12 @@ target's defenses, then apply it to a hit-point pool. Three pure stages (plus
 the roll, which uses `dice`). Damage amounts are kept as `int` here.
 
 ```go
-type DamagePart struct { Amount int; Type core.DamageType; Magical bool }  // Magical overcomes "resistance to nonmagical"
+type DamagePart struct {
+    Amount  int
+    Type    core.DamageType
+    Magical bool   // overcomes "resistance to nonmagical"
+    Dice    []int  // faces as rolled, critical dice included, in roll order; empty when no die was rolled
+}
 type Damage     struct { Parts []DamagePart }
 
 type PartSpec struct { Dice dice.Expr; Type core.DamageType; Magical bool }
@@ -527,7 +532,11 @@ type Spec     struct { Parts []PartSpec }
 // attacker's flat damage modifier (an ability modifier, or 0 for an off-hand
 // attack or most spells); the game decides which ability per the attack type.
 // It is added once to the primary part, so it carries that part's damage type
-// for resistance and is not doubled on a critical.
+// for resistance and is not doubled on a critical. Each part keeps the faces
+// its dice showed in Dice (the dice.Result faces), so a game narrates the roll
+// ("1d8: [5] + 3 = 8 slashing") from the API rather than by recording the
+// Roller's draws. Amount is unchanged by it: the dice total plus the
+// expression's modifier, plus bonus on the primary part, floored at zero.
 func Roll(spec Spec, bonus core.Modifier, outcome combat.AttackOutcome, r dice.Roller) Damage
 
 // Mitigation is everything that reduces or modifies incoming damage. Resistance,

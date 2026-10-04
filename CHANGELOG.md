@@ -5,6 +5,21 @@ All notable changes to this module are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/), and this
 module follows [Semantic Versioning](https://semver.org/).
 
+## v1.5.0
+
+Additive: one new field, and `Amount` is the same for the same rolls. The
+field is a slice, so `damage.DamagePart` is no longer comparable with `==`
+and cannot be a map key; a consumer doing either compares fields instead.
+No known consumer does.
+
+### Added
+
+* `damage.DamagePart.Dice`, the die faces each part rolled, in roll order,
+  with the doubled dice of a critical hit included. `damage.Roll` and
+  `damage.RollSingle` fill it; damage a game builds without rolling leaves
+  it empty, and mitigation and hit-point application ignore it. A game can
+  narrate a damage roll without recording its `dice.Roller`'s draws.
+
 ## v1.4.0
 
 Additive: nothing existing changed shape or value, so a v1.3.0 consumer
