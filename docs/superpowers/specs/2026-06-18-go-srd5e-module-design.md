@@ -707,6 +707,31 @@ func (t *Tracker) Next() Event                                                  
 func (t *Tracker) Round() int
 func (t *Tracker) Upcoming() []Event                                              // a copy of the upcoming timeline, for logging or rendering
 
+// save and restore, for a game that persists its state between actions
+type TrackerState struct {
+    Combatants []CombatantState   // insertion order, removed ones included (Active false)
+    Effects    []ScheduledEffect  // scheduling order, with current Remaining
+    NextOrder  int                // tie-break order the next new combatant receives
+    Round      int                // 0 until started
+    Sequence   []Event            // the current round as built, restored as is
+    Position   int                // cursor into Sequence
+    Started    bool
+}
+type CombatantState struct {
+    Id         string
+    Initiative int
+    Dex        core.AbilityScore
+    Order      int   // insertion tie-break
+    Active     bool
+}
+type ScheduledEffect struct {
+    Effect Active
+    Anchor string
+    When   Timing
+}
+func (t *Tracker) State() TrackerState                  // deep copy; does not start the tracker
+func RestoreTracker(s TrackerState) (*Tracker, error)   // deep copy; rejects an inconsistent snapshot
+
 // per-participant action economy for one round
 type Economy struct {
     ActionUsed, BonusUsed, ReactionUsed bool
@@ -753,6 +778,55 @@ action fires inline on another creature's turn without advancing the order, so
 it is purely `Economy` bookkeeping (one reaction per round, reset at the start of
 your turn). A readied action is a reaction with a game-defined trigger. The game
 decides what triggers a reaction and executes it.
+
+### Saving and restoring the tracker
+
+The `Tracker` keeps its fields unexported, because its methods maintain the
+timeline's invariants, so it is saved through an exported snapshot rather than
+by making it a value type. `State` returns a `TrackerState`, a plain value type
+with exported fields and no JSON tags that round-trips through `encoding/json`
+(or any other encoder) like every other value type in the module, and
+`RestoreTracker` rebuilds a tracker from one. A `MarshalJSON`/`UnmarshalJSON`
+pair on `Tracker` was rejected: it would be the module's only custom marshaler,
+it would tie saves to JSON, and a game could not embed the state in its own save
+struct or ECS component. Heatsink, which saves its whole game state after every
+action, is the consumer that asked for it.
+
+A restored tracker produces the same `Current`, `Next`, `Round`, and `Upcoming`
+results as the original from the snapshot on. Three details make that hold:
+
+* `Sequence` and `Position` are restored as is, not rebuilt. Combatants added
+  and effects scheduled mid-round join only from the next round, so rebuilding
+  would pull them into the current one.
+* Each effect event carries its own copy of the `Active`, taken when the round
+  was built; `Cancel` and the end-of-round countdown match effects by `Id`, never
+  by pointer. So `Sequence` serializes by value and needs no rewiring, and the
+  copy's `Remaining` stays as built, as it does on the original.
+* `NextOrder` and the removed combatants (`Active` false) are kept, so a
+  combatant added after a restore gets the same tie-break as without the save,
+  and a removed anchor's effects keep their slot.
+
+`State` does not start the tracker: a snapshot taken before the first `Current`
+has `Started` false, and the restored tracker starts round 1 as the original
+would. Both functions deep-copy, so a snapshot never aliases a live tracker.
+
+A snapshot is external input, so `RestoreTracker` returns an error for an
+inconsistent one instead of panicking: duplicate combatant Ids, an `Order` that
+repeats or falls outside `[0, NextOrder)`, an unknown `Timing`, a not-started
+snapshot with a round or a sequence, a started one at round 0, a `Position`
+outside `Sequence` (an empty sequence while started is legal: everyone was
+removed), an event from another round, a turn for an unknown combatant or with
+an effect, an effect event without one, or an unknown event kind. Effect events
+are not checked against `Effects`, because an effect that already fired this
+round may since have been cancelled.
+
+The field names of `TrackerState`, `CombatantState`, and `ScheduledEffect` are
+now a save format, so renaming one is a breaking change. `EventKind`,
+`TargetKind`, and `Timing` predate the explicit-zero-enum principle and their
+zero values are real members (`EventTurn`, `TargetCreature`, `Before`).
+Renumbering them to add an `…Unspecified` zero was already a breaking change;
+with saves it would also silently change what an existing save means, so any
+such change needs a migration for saved trackers.
 
 ## Package: content
 
@@ -948,9 +1022,9 @@ exported fields and round-trip through `encoding/json` with no custom marshaler,
 so a game serializes its whole party (these pools included) into a save without
 extra accessors. This is consistent with the rest of the module's transparent
 value types; the methods are conveniences that maintain invariants, not
-encapsulation the game must go through. (`turn.Tracker` is mid-mission state, not
-part of a between-mission save, so its serialization is left until a consumer
-needs it.)
+encapsulation the game must go through. (`turn.Tracker` is mid-mission state
+with invariants its methods maintain, so it is saved through the
+`turn.TrackerState` snapshot instead; see "Saving and restoring the tracker.")
 
 `ResourceId` is a typed string in the same spirit as the other named units: it
 catches a wrong-typed key and groups the game's constants (`const Ki

@@ -5,6 +5,21 @@ All notable changes to this module are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/), and this
 module follows [Semantic Versioning](https://semver.org/).
 
+## v1.4.0
+
+Additive: nothing existing changed shape or value, so a v1.3.0 consumer
+builds unchanged.
+
+### Added
+
+* `turn.TrackerState`, `turn.CombatantState`, and `turn.ScheduledEffect`, a
+  serializable snapshot of a `turn.Tracker`, with `(*turn.Tracker).State` to
+  take one and `turn.RestoreTracker` to rebuild a tracker from it. A game that
+  saves its state between actions can now keep a tracker mid-combat: the
+  restored tracker continues the same round, in the same order, with the same
+  effect countdowns. `RestoreTracker` returns an error for an inconsistent
+  snapshot.
+
 ## v1.3.0
 
 Additive throughout: nothing existing changed shape or value, so a v1.2.0
