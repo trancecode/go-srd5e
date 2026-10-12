@@ -15,6 +15,11 @@ jobs:
     uses: trancecode/github-workflows/.github/workflows/go-analysis.yml@main
     with:
       system-packages: ''
+      # Go 1.27.2 changed the export data format. The shared defaults
+      # (staticcheck 2026.2.1, golangci-lint v2.13.1) cannot read it; these
+      # are the first releases that can.
+      staticcheck-version: '2026.2.2'
+      golangci-version: 'v2.14.0'
       golangci-args: '--disable=staticcheck'
       staticcheck-checks: 'inherit'
       go-cache: false
