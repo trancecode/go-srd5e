@@ -82,8 +82,7 @@ This section contains guidelines specific to this repository that extend or over
   repository falls behind, it opens a `claude`-labelled issue rather than
   pushing a branch or opening a pull request: the built-in `GITHUB_TOKEN`
   cannot push commits that touch files under `.github/workflows/`, so a
-  self-crafted bump would be rejected. The autonomous Claude agent picks up the
-  issue and opens the pull request instead.
+  self-crafted bump would be rejected.
 
 ### Go Testing Requirements
 
