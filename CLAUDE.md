@@ -18,10 +18,6 @@ For branch naming, commit formatting, pre-commit checks, and PR conventions, see
 
 * When removing logic, don't leave comments about it. If things don't exist, we don't need to mention them
 
-## Git Workflow
-
-- If the task involves large or complex changes, ask the user whether they prefer a direct commit to `main` or a PR
-
 ## Repository-Specific Guidelines
 
 This section contains guidelines specific to this repository that extend or override the universal guidelines above.
@@ -71,7 +67,7 @@ If these commands cannot be run due to environment issues, DO NOT push. Instead,
 
 ### Dependency Management for Go
 
-When adding a new Go module dependency, you MUST document it prominently in the PR description:
+When adding a new Go module dependency, you MUST document it prominently in the commit message:
 
 * Package name and version
 * Purpose: why the dependency is needed
